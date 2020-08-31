@@ -3,6 +3,13 @@ body{
     background: #EEEEEE;
     margin-top: 80px;
 }
+main{
+    margin-left: 20px;
+    padding-top: 30px;
+    background: blue;
+}
+
+/*estilo do topo*/
 header{
     background: #CF2B2B;
     font-family: 'Righteous', cursive;
@@ -20,10 +27,8 @@ header{
     -moz-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.80);
     box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 0.80);
 }
-.prato, .bebida, .sobremesa{
-    font-family: 'Roboto', sans-serif;
-    color: #333333;
-}
+
+/*estilo do footer*/
 footer{
     background: #FFFFFF;
     width: 100%;
@@ -56,7 +61,9 @@ h1{
     margin-bottom: 5px;
 }
 h2{
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 15px;
 }
 h3{
     font-size: 14px;
@@ -70,4 +77,11 @@ h4{
 p{
     font-size: 12px;
     font-weight: thin;
+}
+
+/*estilo das section*/
+.prato, .bebida, .sobremesa{
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    height: 260px;
 }
