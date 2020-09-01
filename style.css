@@ -100,7 +100,7 @@ p{
 .prato ul, .bebida ul, .sobremesa ul{
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow: scroll;
 }
 .prato li, .bebida li, .sobremesa li{
     width: 170px;
@@ -120,4 +120,8 @@ li img{
     width: 150px;
     height: 90px;
     border-radius: 15px;
+}
+-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
