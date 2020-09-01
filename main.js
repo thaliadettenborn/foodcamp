@@ -1,16 +1,16 @@
 //cardápio do foodcamp
 var pratos = [
-    {srci: "img/baiao.jpg",
+    {link: "img/baiao.jpg",
     prato: "baião de dois", 
     descricao: "feijão de corda e arroz, acompanhando de carne de sol e queijo", 
     preço: "18,90"},
 
-    {srci: "img/moqueca.jpg",
+    {link: "img/moqueca.jpg",
     prato: "moqueca de banana da terra", 
     descricao: "tradicional moqueca baiana na versão vegana", 
     preço: "16,90"},
 
-    {srci: "img/tainha.jpg",
+    {link: "img/tainha.jpg",
     prato: "tainha na taquara", 
     descricao: "tainha acompanhada de pirão e farofa de castanha do Brasil", 
     preço: "21,90"}
@@ -60,51 +60,84 @@ var sobremesas = [
     preço: "8,00"}
 ];
 
-var sectionPratos = document.querySelector('.prato ul');
-var sectionBebida = document.querySelector('.bebida ul');
-var sectionSobremesa = document.querySelector('.sobremesa ul');
 
 //inserir pratos no menu
 
-function renderMenu(){
-    for (prato of pratos){
-        //var pos = pratos.indexOf(prato);
-        var i = 0;
-        var loop = pratos.length + 1;
+function renderPratos(){
+    var i = 0;
+    var loop1 = pratos.length + 1;
+    var sectionPratos = document.querySelector('.prato ul');
 
-        while(i < loop){
-            var pratoElement = document.createElement("li");
+    while(i < loop1){
+        var pratoElement = document.createElement("li");
 
-            //foto do prato
-            var imgPrato = document.createElement("img");
-            imgPrato.setAttribute("src", pratos[i].srci);
-            pratoElement.appendChild(imgPrato);
-            //nome do prato
-            var tituloPrato = document.createElement("h3");
-            var nomePrato = document.createTextNode(pratos[i].prato);
-            tituloPrato.appendChild(nomePrato);
-            pratoElement.appendChild(tituloPrato);
-            //descrição do prato
-            var descricaoPrato = document.createElement("p");
-            var textDescricao = document.createTextNode(pratos[i].descricao);
-            descricaoPrato.appendChild(textDescricao);
-            pratoElement.appendChild(descricaoPrato);
-            //preço do prato
-            var precoPrato = document.createElement("h5");
-            var textPreco = document.createTextNode("R$ " + pratos[i].preço);
-            precoPrato.appendChild(textPreco);
-            pratoElement.appendChild(precoPrato);
+        //foto do prato
+        var imgPrato = document.createElement("img");
+        imgPrato.setAttribute("src", pratos[i].link);
+        pratoElement.appendChild(imgPrato);
+        //nome do prato
+        var tituloPrato = document.createElement("h3");
+        var nomePrato = document.createTextNode(pratos[i].prato);
+        tituloPrato.appendChild(nomePrato);
+        pratoElement.appendChild(tituloPrato);
+        //descrição do prato
+        var descricaoPrato = document.createElement("p");
+        var textDescricao = document.createTextNode(pratos[i].descricao);
+        descricaoPrato.appendChild(textDescricao);
+        pratoElement.appendChild(descricaoPrato);
+        //preço do prato
+        var precoPrato = document.createElement("h5");
+        var textPreco = document.createTextNode("R$ " + pratos[i].preço);
+        precoPrato.appendChild(textPreco);
+        pratoElement.appendChild(precoPrato);
 
-            sectionPratos.appendChild(pratoElement);
-            i++;
-        }
+        sectionPratos.appendChild(pratoElement);
+        i++;
     };
-
-    for(bebida of bebidas){
-        var a = 0;
-        var b = bebidas.length + 1;
-        console.log(b);
-    }
 };
+renderPratos();
 
-renderMenu();
+function renderBebidas(){
+    var j = 0;
+    var loop2 = bebidas.length + 1;
+    var sectionBebida = document.querySelector('.bebida ul');
+    console.log(sectionBebida);
+    console.log(loop2)
+
+    while(j < loop2){
+        var bebidaElement = document.createElement("li");
+
+        //foto da bebida
+        var imgBebida = document.createElement("img");
+        imgBebida.setAttribute("src", bebidas[j].srci);
+        bebidaElement.appendChild(imgBebida);
+        //nome da bebida
+        var tituloBebida = document.createElement("h3");
+        var nomeBebida = document.createTextNode(bebidas[j].bebida);
+        tituloBebida.appendChild(nomeBebida);
+        bebidaElement.appendChild(tituloBebida);
+        //descrição da bebida
+        var descricaoBebida = document.createElement("p");
+        var textBebDescricao = document.createTextNode(bebidas[j].descricao);
+        descricaoBebida.appendChild(textBebDescricao);
+        bebidaElement.appendChild(descricaoBebida);
+        //preço da bebida
+        var precoBebida = document.createElement("h5");
+        var textPrecoBebida = document.createTextNode("R$ " + bebidas[j].preço);
+        precoBebida.appendChild(textPrecoBebida);
+        bebidaElement.appendChild(precoBebida);
+
+        sectionBebida.appendChild(bebidaElement);
+        j++;
+    };
+};
+renderBebidas();
+
+
+
+
+
+
+//renderSobremesas();
+//var loop3 = sobremesas.length + 1;
+//var sectionSobremesa = document.querySelector('.sobremesa ul');
