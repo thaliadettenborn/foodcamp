@@ -1,60 +1,60 @@
 //cardápio do foodcamp
 var pratos = [
-    {src: "img/baiao.jpg",
+    {srci: "img/baiao.jpg",
     prato: "baião de dois", 
     descricao: "feijão de corda e arroz, acompanhando de carne de sol e queijo", 
     preço: "18,90"},
 
-    {src: "img/moqueca.jpg",
+    {srci: "img/moqueca.jpg",
     prato: "moqueca de banana da terra", 
     descricao: "tradicional moqueca baiana na versão vegana", 
     preço: "16,90"},
 
-    {src: "img/tainha.jpg",
+    {srci: "img/tainha.jpg",
     prato: "tainha na taquara", 
     descricao: "tainha acompanhada de pirão e farofa de castanha do Brasil", 
     preço: "21,90"}
 ];
 
 var bebidas = [
-    {src: "img/coca.jpg",
+    {srci: "img/coca.jpg",
     bebida: "coquinha gelada", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
-    {src: "img/cocaZ.jpg",
+    {srci: "img/cocaZ.jpg",
     bebida: "coquinha gelada zero", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
-    {src: "img/pepsi.jpg",
+    {srci: "img/pepsi.jpg",
     bebida: "pepsi, pode ser?", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
-    {src: "img/pepsiZ.jpg",
+    {srci: "img/pepsiZ.jpg",
     bebida: "pepsi zero", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
-    {src: "img/pepsiTwist.jpg",
+    {srci: "img/pepsiTwist.jpg",
     bebida: "pepsi twsti", 
     descricao: "lata 350ml", 
     preço: "5,00"}
 ];
 
-var sobremesa = [
-    {src: "img/pudim.jpg",
+var sobremesas = [
+    {srci: "img/pudim.jpg",
     prato: "pudim", 
     descricao: "pudim de leite condensado", 
     preço: "4,00"},
 
-    {src: "img/tiramisu.jpg",
+    {srci: "img/tiramisu.jpg",
     prato: "tiramisù", 
     descricao: "sobremesa de creme de chocolate e café", 
     preço: "7,00"},
 
-    {src: "img/tortinha.jpg",
+    {srci: "img/tortinha.jpg",
     prato: "torta de limão", 
     descricao: "clássica torta de limão francesa", 
     preço: "8,00"}
@@ -66,9 +66,9 @@ var sectionSobremesa = document.querySelector('.sobremesa ul');
 
 //inserir pratos no menu
 
-function inserePratos(){
+function renderMenu(){
     for (prato of pratos){
-        var pos = pratos.indexOf(prato);
+        //var pos = pratos.indexOf(prato);
         var i = 0;
         var loop = pratos.length + 1;
 
@@ -77,7 +77,7 @@ function inserePratos(){
 
             //foto do prato
             var imgPrato = document.createElement("img");
-            imgPrato.setAttribute("src", pratos[i].src);
+            imgPrato.setAttribute("src", pratos[i].srci);
             pratoElement.appendChild(imgPrato);
             //nome do prato
             var tituloPrato = document.createElement("h3");
@@ -98,21 +98,13 @@ function inserePratos(){
             sectionPratos.appendChild(pratoElement);
             i++;
         }
+    };
+
+    for(bebida of bebidas){
+        var a = 0;
+        var b = bebidas.length + 1;
+        console.log(b);
     }
 };
 
-//inserir bebidas no menu
-function insereBebida(){
-    
-};
-
-//inserir sobremesas no menu
-function insereSobremesa(){
-
-};
-
-
-//chama as funções para renderizar o menu
-inserePratos();
-insereBebida();
-insereSobremesa();
+renderMenu();
