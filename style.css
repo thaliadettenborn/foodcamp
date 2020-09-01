@@ -6,7 +6,6 @@ body{
 main{
     margin-left: 20px;
     padding-top: 30px;
-    background: blue;
 }
 
 /*estilo do topo*/
@@ -66,17 +65,28 @@ h2{
     margin-bottom: 15px;
 }
 h3{
-    font-size: 14px;
-    font-weight: normal;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0px;
+    text-transform: capitalize;
 }
 h4{
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
+h5{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0px;
+    text-transform: capitalize;
+}
 p{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: thin;
+    margin: 10px 0px;
 }
 
 /*estilo das section*/
@@ -84,4 +94,25 @@ p{
     font-family: 'Roboto', sans-serif;
     color: #333333;
     height: 260px;
+    margin-bottom: 10px;
+}
+.prato ul, .bebida ul, .sobremesa ul{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.prato li, .bebida li, .sobremesa li{
+    width: 170px;
+    height: 215px;
+    margin: 0px 15px 0px 0px;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.80);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.80);
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.80);
+}
+li img{
+    width: 100%;
+    border-radius: 15px;
 }
