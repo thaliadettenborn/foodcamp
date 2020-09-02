@@ -33,12 +33,12 @@ var bebidas = [
     preço: "6,00"},
 
     {link: "img/pepsiZ.jpg",
-    bebida: "pepsi zero", 
+    bebida: "pepsi zero, pode ser?", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
     {link: "img/pepsiTwist.jpg",
-    bebida: "pepsi twsti", 
+    bebida: "pepsi twsti, pode ser?", 
     descricao: "lata 350ml", 
     preço: "5,00"}
 ];
@@ -129,7 +129,7 @@ function renderBebidas(){
     };
 };
 
-function renderSobremesas{
+function renderSobremesas(){
     var k = 0;
     var loop3 = sobremesas.length;
     var sectionSobremesa = document.querySelector('.sobremesa ul');

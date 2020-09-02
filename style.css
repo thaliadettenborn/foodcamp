@@ -53,6 +53,10 @@ footer button{
     border-radius: 30px;
     border: none;
 }
+-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
 
 /*estilo dos titulos*/
 h1{
@@ -95,7 +99,7 @@ p{
     font-family: 'Roboto', sans-serif;
     color: #333333;
     height: 280px;
-    margin-bottom: 30px;
+    margin: 20px 0px;
 }
 .prato ul, .bebida ul, .sobremesa ul{
     display: flex;
@@ -121,7 +125,7 @@ li img{
     height: 90px;
     border-radius: 15px;
 }
--webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+.bebidas img{
+    width: 50px;
+    height: 90px;
 }
