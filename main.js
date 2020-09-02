@@ -38,7 +38,7 @@ var bebidas = [
     preço: "6,00"},
 
     {link: "img/pepsiTwist.jpg",
-    bebida: "pepsi twsti, pode ser?", 
+    bebida: "pepsi twist, pode ser?", 
     descricao: "lata 350ml", 
     preço: "5,00"}
 ];
@@ -133,6 +133,33 @@ function renderSobremesas(){
     var k = 0;
     var loop3 = sobremesas.length;
     var sectionSobremesa = document.querySelector('.sobremesa ul');
+
+    while(k < loop3){
+        var sobremesaElement = document.createElement("li");
+
+        //foto da sobremesa
+        var imgSobremesa = document.createElement("img");
+        imgSobremesa.setAttribute("src", sobremesas[k].link);
+        sobremesaElement.appendChild(imgSobremesa);
+        //nome da sobremesa
+        var tituloSobremesa = document.createElement("h3");
+        var nomeSobremesa = document.createTextNode(sobremesas[k].prato);
+        tituloSobremesa.appendChild(nomeSobremesa);
+        sobremesaElement.appendChild(tituloSobremesa);
+        //descrição da sobremesa
+        var descricaoSobremesa = document.createElement("p");
+        var textSobremesaDescricao = document.createTextNode(sobremesas[k].descricao);
+        descricaoSobremesa.appendChild(textSobremesaDescricao);
+        sobremesaElement.appendChild(descricaoSobremesa);
+        //preço da sobremesa
+        var precoSobremesa = document.createElement("h5");
+        var textPrecoSobremesa = document.createTextNode("R$ " + sobremesas[k].preço);
+        precoSobremesa.appendChild(textPrecoSobremesa);
+        sobremesaElement.appendChild(precoSobremesa);
+
+        sectionSobremesa.appendChild(sobremesaElement);
+        k++;
+    }
 }
 
 
