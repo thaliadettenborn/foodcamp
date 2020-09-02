@@ -1,60 +1,71 @@
 //cardápio do foodcamp
 var pratos = [
-    {link: "img/baiao.jpg",
+    {id: "p1",
+    link: "img/baiao.jpg",
     prato: "baião de dois", 
     descricao: "feijão de corda e arroz, acompanhando de carne de sol e queijo", 
-    preço: "18,90"},
+    preço: "19,00"},
 
-    {link: "img/moqueca.jpg",
+    {id: "p2",
+    link: "img/moqueca.jpg",
     prato: "moqueca de banana da terra", 
     descricao: "tradicional moqueca baiana na versão vegana", 
-    preço: "16,90"},
+    preço: "17,00"},
 
-    {link: "img/tainha.jpg",
+    {id: "p3",
+    link: "img/tainha.jpg",
     prato: "tainha na taquara", 
     descricao: "tainha acompanhada de pirão e farofa de castanha do Brasil", 
-    preço: "21,90"}
+    preço: "22,00"}
 ];
 
 var bebidas = [
-    {link: "img/coca.jpg",
+    {id: "b1",
+    link: "img/coca.jpg",
     bebida: "coquinha gelada", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
-    {link: "img/cocaZ.jpg",
+    {id: "b2",
+    link: "img/cocaZ.jpg",
     bebida: "coquinha gelada zero", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
-    {link: "img/pepsi.jpg",
+    {id: "b3",
+    link: "img/pepsi.jpg",
     bebida: "pepsi, pode ser?", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
-    {link: "img/pepsiZ.jpg",
+    {id: "b4",
+    link: "img/pepsiZ.jpg",
     bebida: "pepsi zero, pode ser?", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
-    {link: "img/pepsiTwist.jpg",
+    {id: "b5",
+    link: "img/pepsiTwist.jpg",
     bebida: "pepsi twist, pode ser?", 
     descricao: "lata 350ml", 
     preço: "5,00"}
 ];
 
 var sobremesas = [
-    {link: "img/pudim.jpg",
+    {id: "s1",
+    link: "img/pudim.jpg",
     prato: "pudim", 
     descricao: "pudim de leite condensado", 
     preço: "4,00"},
 
-    {link: "img/tiramisu.jpg",
+    {id: "s2",
+    link: "img/tiramisu.jpg",
     prato: "tiramisù", 
     descricao: "sobremesa de creme de chocolate e café", 
     preço: "7,00"},
 
-    {link: "img/tortinha.jpg",
+    {id: "s3",
+    link: "img/tortinha.jpg",
     prato: "torta de limão", 
     descricao: "clássica torta de limão francesa", 
     preço: "8,00"}
@@ -68,6 +79,9 @@ var sectionPratos = document.querySelector('.prato ul');
 
 while(i < loop1){
     var pratoElement = document.createElement("li");
+
+    //id do prato
+    pratoElement.setAttribute('id', pratos[i].id);
 
     //foto do prato
     var imgPrato = document.createElement("img");
@@ -89,6 +103,9 @@ while(i < loop1){
     precoPrato.appendChild(textPreco);
     pratoElement.appendChild(precoPrato);
 
+    //adicionando função seleção do item li
+    pratoElement.setAttribute('onclick', 'selecao(pratos, ' + i +')');
+
     sectionPratos.appendChild(pratoElement);
     i++;
 };
@@ -100,6 +117,9 @@ var sectionBebida = document.querySelector('.bebida ul');
 
 while(j < loop2){
     var bebidaElement = document.createElement("li");
+
+    //id da bebida
+    bebidaElement.setAttribute('id', bebidas[j].id);
 
     //foto da bebida
     var imgBebida = document.createElement("img");
@@ -121,6 +141,9 @@ while(j < loop2){
     precoBebida.appendChild(textPrecoBebida);
     bebidaElement.appendChild(precoBebida);
 
+    //adicionando função seleção do item li
+    bebidaElement.setAttribute('onclick', 'selecao(bebidas, ' + j +')');
+
     sectionBebida.appendChild(bebidaElement);
     j++;
 };
@@ -132,6 +155,9 @@ var sectionSobremesa = document.querySelector('.sobremesa ul');
 
 while(k < loop3){
     var sobremesaElement = document.createElement("li");
+
+    //id da bebida
+    sobremesaElement.setAttribute('id', sobremesas[k].id);
 
     //foto da sobremesa
     var imgSobremesa = document.createElement("img");
@@ -153,7 +179,114 @@ while(k < loop3){
     precoSobremesa.appendChild(textPrecoSobremesa);
     sobremesaElement.appendChild(precoSobremesa);
 
+    //adicionando função seleção do item li
+    sobremesaElement.setAttribute('onclick', 'selecao(sobremesas, ' + k +')');
+
     sectionSobremesa.appendChild(sobremesaElement);
     k++;
 };
 
+//função de seleção do prato
+function selecao(item, pos){
+    var selecionado = item[pos];
+    console.log(selecionado);
+    
+    if(item[pos].id == "p1"){
+        var selecao = document.querySelector(".prato li:nth-child(1)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".prato li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".prato li:nth-child(3)");
+        selecao.style.border = "none";
+    } else if(item[pos].id == "p2"){
+        var selecao = document.querySelector(".prato li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".prato li:nth-child(2)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".prato li:nth-child(3)");
+        selecao.style.border = "none";
+    } else if(item[pos].id == "p3"){
+        var selecao = document.querySelector(".prato li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".prato li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".prato li:nth-child(3)");
+        selecao.style.border = "1px solid green";
+    }else if(item[pos].id == "b1"){
+        var selecao = document.querySelector(".bebida li:nth-child(1)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".bebida li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(3)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(4)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(5)");
+        selecao.style.border = "none";
+    }else if(item[pos].id == "b2"){
+        var selecao = document.querySelector(".bebida li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(2)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".bebida li:nth-child(3)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(4)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(5)");
+        selecao.style.border = "none";
+    }else if(item[pos].id == "b3"){
+        var selecao = document.querySelector(".bebida li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(3)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".bebida li:nth-child(4)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(5)");
+        selecao.style.border = "none";
+    }else if(item[pos].id == "b4"){
+        var selecao = document.querySelector(".bebida li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(3)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(4)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".bebida li:nth-child(5)");
+        selecao.style.border = "none";
+    }else if(item[pos].id == "b5"){
+        var selecao = document.querySelector(".bebida li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(3)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(4)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".bebida li:nth-child(5)");
+        selecao.style.border = "1px solid green";
+    }else if(item[pos].id == "s1"){
+        var selecao = document.querySelector(".sobremesa li:nth-child(1)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".sobremesa li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".sobremesa li:nth-child(3)");
+        selecao.style.border = "none";
+    }else if(item[pos].id == "s2"){
+        var selecao = document.querySelector(".sobremesa li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".sobremesa li:nth-child(2)");
+        selecao.style.border = "1px solid green";
+        var selecao = document.querySelector(".sobremesa li:nth-child(3)");
+        selecao.style.border = "none";
+    }else if(item[pos].id == "s3"){
+        var selecao = document.querySelector(".sobremesa li:nth-child(1)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".sobremesa li:nth-child(2)");
+        selecao.style.border = "none";
+        var selecao = document.querySelector(".sobremesa li:nth-child(3)");
+        selecao.style.border = "1px solid green";
+    }
+}
