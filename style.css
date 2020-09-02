@@ -53,10 +53,6 @@ footer button{
     border-radius: 30px;
     border: none;
 }
--webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
 
 /*estilo dos titulos*/
 h1{
@@ -105,6 +101,10 @@ p{
     display: flex;
     align-items: center;
     overflow: scroll;
+}
+-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 .prato li, .bebida li, .sobremesa li{
     width: 170px;
