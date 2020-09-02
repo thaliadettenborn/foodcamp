@@ -17,44 +17,44 @@ var pratos = [
 ];
 
 var bebidas = [
-    {srci: "img/coca.jpg",
+    {link: "img/coca.jpg",
     bebida: "coquinha gelada", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
-    {srci: "img/cocaZ.jpg",
+    {link: "img/cocaZ.jpg",
     bebida: "coquinha gelada zero", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
-    {srci: "img/pepsi.jpg",
+    {link: "img/pepsi.jpg",
     bebida: "pepsi, pode ser?", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
-    {srci: "img/pepsiZ.jpg",
+    {link: "img/pepsiZ.jpg",
     bebida: "pepsi zero", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
-    {srci: "img/pepsiTwist.jpg",
+    {link: "img/pepsiTwist.jpg",
     bebida: "pepsi twsti", 
     descricao: "lata 350ml", 
     preço: "5,00"}
 ];
 
 var sobremesas = [
-    {srci: "img/pudim.jpg",
+    {link: "img/pudim.jpg",
     prato: "pudim", 
     descricao: "pudim de leite condensado", 
     preço: "4,00"},
 
-    {srci: "img/tiramisu.jpg",
+    {link: "img/tiramisu.jpg",
     prato: "tiramisù", 
     descricao: "sobremesa de creme de chocolate e café", 
     preço: "7,00"},
 
-    {srci: "img/tortinha.jpg",
+    {link: "img/tortinha.jpg",
     prato: "torta de limão", 
     descricao: "clássica torta de limão francesa", 
     preço: "8,00"}
@@ -65,7 +65,7 @@ var sobremesas = [
 
 function renderPratos(){
     var i = 0;
-    var loop1 = pratos.length + 1;
+    var loop1 = pratos.length;
     var sectionPratos = document.querySelector('.prato ul');
 
     while(i < loop1){
@@ -95,21 +95,18 @@ function renderPratos(){
         i++;
     };
 };
-renderPratos();
 
 function renderBebidas(){
     var j = 0;
-    var loop2 = bebidas.length + 1;
+    var loop2 = bebidas.length;
     var sectionBebida = document.querySelector('.bebida ul');
-    console.log(sectionBebida);
-    console.log(loop2)
 
     while(j < loop2){
         var bebidaElement = document.createElement("li");
 
         //foto da bebida
         var imgBebida = document.createElement("img");
-        imgBebida.setAttribute("src", bebidas[j].srci);
+        imgBebida.setAttribute("src", bebidas[j].link);
         bebidaElement.appendChild(imgBebida);
         //nome da bebida
         var tituloBebida = document.createElement("h3");
@@ -131,13 +128,15 @@ function renderBebidas(){
         j++;
     };
 };
+
+function renderSobremesas{
+    var k = 0;
+    var loop3 = sobremesas.length;
+    var sectionSobremesa = document.querySelector('.sobremesa ul');
+}
+
+
+
+renderPratos();
 renderBebidas();
-
-
-
-
-
-
-//renderSobremesas();
-//var loop3 = sobremesas.length + 1;
-//var sectionSobremesa = document.querySelector('.sobremesa ul');
+renderSobremesas();
