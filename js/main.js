@@ -10,10 +10,11 @@ main();
 function ativarBotao (){
     var combo = document.querySelectorAll('.selecionado');
     combo = combo.length;
-    
+
     if(combo === 3){
         mudaEstiloBotao();
-    }
+        pegaNomeEPreço();
+    };
 };
 
 function mudaEstiloBotao(){
@@ -24,7 +25,44 @@ function mudaEstiloBotao(){
     botaoAtivado.style.padding = "15px";
     botaoAtivado.style.fontWeight = "bold";
     botaoAtivado.setAttribute('onclick','confirmaPedido()');
-}
+};
+
+function pegaNomeEPreço(){
+    var itensNome = document.querySelectorAll('.selecionado h3');
+    var itensPreço = document.querySelectorAll('.selecionado h5');
+
+    var pratoNome = itensNome[0].innerText;
+    var pratoPreco = itensPreço[0].innerText;
+    insereItemCombo(pratoNome, pratoPreco);
+
+    var bebidaNome = itensNome[1].innerText;
+    var bebidaPreco = itensPreço[1].innerText;
+    insereItemCombo(bebidaNome, bebidaPreco);
+
+    var sobremesaNome = itensNome[2].innerText;
+    var sobremesaPreco = itensPreço[2].innerText;
+    insereItemCombo(sobremesaNome, sobremesaPreco);
+};
+
+function insereItemCombo(span1, span2){
+    var pedido = document.querySelector('.pedido');
+
+    //criando as linhas com nome e preço do item na janela de confirmação
+    var itemCombo = document.createElement('div');
+
+    //insere o nome
+    var nome = document.createElement('span');
+    nome.innerText = span1;
+    itemCombo.appendChild(nome);
+
+    //insere o preço
+    var preco = document.createElement('span');
+    preco.innerText = span2;
+    itemCombo.appendChild(preco);
+
+    //insere a div
+    pedido.appendChild(itemCombo);
+};
 
 //função de confirmação do pedido
 function confirmaPedido(){
@@ -33,7 +71,7 @@ function confirmaPedido(){
 
     var janelaConfirmacao = document.querySelector('.janelaConfirmacao');
     janelaConfirmacao.style.display = "flex";
-}
+};
 
 //função para sair da tela de confirmação
 function cancelar(){
