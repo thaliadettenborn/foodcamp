@@ -357,4 +357,28 @@ function selecao(item, pos){
         var selecao = document.querySelector(".sobremesa li:nth-child(3)");
         selecao.setAttribute('class','selecionado');
     }
+    ativaBotao();
+};
+
+//botão é ativado quando seleciona 3 itens
+function ativaBotao (){
+    var combo = document.querySelectorAll('.selecionado');
+    combo = combo.length;
+    
+    if(combo === 3){
+        var botaoAtivado = document.querySelector('footer button');
+        botaoAtivado.removeAttribute('disabled');
+        botaoAtivado.innerText = "Fechar pedido";
+        botaoAtivado.style.background = "#32B72F";
+        botaoAtivado.style.padding = "15px";
+        botaoAtivado.style.fontWeight = "bold";
+        botaoAtivado.setAttribute('onclick','confirmaPedido()');
+    }
+};
+
+//função de confirmação do pedido
+function confirmaPedido(){
+    var nome = prompt("Qual o seu nome?");
+    var endereço = prompt("Qual o endereço de entrega?");
+    
 }
