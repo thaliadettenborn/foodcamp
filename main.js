@@ -22,31 +22,31 @@ var pratos = [
 var bebidas = [
     {id: "b1",
     link: "img/coca.jpg",
-    bebida: "coquinha gelada", 
+    prato: "coquinha gelada", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
     {id: "b2",
     link: "img/cocaZ.jpg",
-    bebida: "coquinha gelada zero", 
+    prato: "coquinha gelada zero", 
     descricao: "lata 350ml", 
     preço: "5,00"},
 
     {id: "b3",
     link: "img/pepsi.jpg",
-    bebida: "pepsi, pode ser?", 
+    prato: "pepsi, pode ser?", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
     {id: "b4",
     link: "img/pepsiZ.jpg",
-    bebida: "pepsi zero, pode ser?", 
+    prato: "pepsi zero, pode ser?", 
     descricao: "lata 350ml", 
     preço: "6,00"},
 
     {id: "b5",
     link: "img/pepsiTwist.jpg",
-    bebida: "pepsi twist, pode ser?", 
+    prato: "pepsi twist, pode ser?", 
     descricao: "lata 350ml", 
     preço: "5,00"}
 ];
@@ -132,7 +132,7 @@ while(j < loop2){
     bebidaElement.appendChild(imgBebida);
     //nome da bebida
     var tituloBebida = document.createElement("h3");
-    var nomeBebida = document.createTextNode(bebidas[j].bebida);
+    var nomeBebida = document.createTextNode(bebidas[j].prato);
     tituloBebida.appendChild(nomeBebida);
     bebidaElement.appendChild(tituloBebida);
     //descrição da bebida
@@ -363,8 +363,6 @@ function selecao(item, pos){
 
     //criando janela de confirmação do pedido
     console.log(selecionado);
-    var janelaConfirmação = document.querySelector('.janelaConfirmacao');
-    //inserção dos itens na janela
     
 };
 

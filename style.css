@@ -154,11 +154,11 @@ li img{
 .janelaConfirmacao{
     display: none;
     width: 100%;
-    height: 400px;
+    height: 350px;
     background: #4fd074;
     color: white;
     position: fixed;
-    top: calc((100% - 400px) / 2);
+    top: calc((100% - 350px) / 2);
     left: 0px;
     padding: 20px;
     flex-direction: column;
@@ -195,4 +195,25 @@ li img{
     font-size: 16px;
     padding: 5px;
     text-align: center;
+}
+.pedido{
+    width: 100%;
+}
+.pedido div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.pedido span{
+    font-size: 18px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0px;
+    text-transform: capitalize;
+}
+.total span{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 10px;
 }
