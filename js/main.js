@@ -13,7 +13,6 @@ function ativarBotao (){
 
     if(combo === 3){
         mudaEstiloBotao();
-        pegaNomeEPreço();
     };
 };
 
@@ -26,6 +25,45 @@ function mudaEstiloBotao(){
     botaoAtivado.style.fontWeight = "bold";
     botaoAtivado.setAttribute('onclick','confirmaPedido()');
 };
+
+//função de confirmação do pedido
+function confirmaPedido(){
+    var arrayPedido = pegaNomeEPreço();
+    var dados = pedirNomeEndereco();
+    
+    ativarJanelaConfirmacao();
+
+    var mensagem = mensagemFinal(arrayPedido,dados);
+    
+    inserirLinkWhats(mensagem);
+};
+
+function mensagemFinal(arrayPedido,dados){
+    var prato = "- Prato: " + arrayPedido[0] + "\n";
+    var bebida = "- Bebida: " + arrayPedido[1] + "\n";
+    var sobremesa = "- Sobremesa: " + arrayPedido[2] + "\n";
+    var total = "Total: R$ " + arrayPedido[3] + "\n\n";
+
+    var nomeCliente = "Nome: " + dados[0] + "\n";
+    var enderecoCliente = "Endereço de entrega: " + dados[1];
+
+    var textmensagem = "Olá, gostaria de fazer o pedido:\n"
+
+    var mensagemWhats = textmensagem + prato + bebida + sobremesa + total + nomeCliente + enderecoCliente;
+    return encodeURIComponent(mensagemWhats);
+}
+
+function inserirLinkWhats(mensagem){
+    var inicioLink = "https://api.whatsapp.com/send?phone=";
+    var telRestaurante = "5551986442061";
+    var fimLink = "&text=" + mensagem;
+    
+    var linkFazerPedido = inicioLink + telRestaurante + fimLink;
+    
+    var btnPedir = document.querySelector('.pedir a');
+    btnPedir.setAttribute('href', linkFazerPedido);
+}
+
 
 function pegaNomeEPreço(){
     var itensNome = document.querySelectorAll('.selecionado h3');
@@ -47,8 +85,16 @@ function pegaNomeEPreço(){
     valor2 = converteNumber(bebidaPreco);
     valor3 = converteNumber(sobremesaPreco);
 
-    calculaTotal(valor1,valor2,valor3);
+    var total = calculaTotal(valor1,valor2,valor3);
+
+    return [pratoNome,bebidaNome,sobremesaNome,total];
 };
+
+function pedirNomeEndereco(){
+    var nome = prompt("Qual o seu nome?");
+    var endereço = prompt("Qual o endereço de entrega?");
+    return [nome,endereço];
+}
 
 
 //inserção dos dados do pedido na janela de confirmação
@@ -97,7 +143,7 @@ function inserePrecoTotal(totalPedido){
 
 //convertendo o preço de string para number
 function converteNumber(valor){
-    valor = valor.substr(4);
+    valor = valor.substr(3);
     return parseFloat(valor);
 };
 
@@ -106,16 +152,15 @@ function calculaTotal(valor1,valor2,valor3){
     var totalPedido = valor1 + valor2 + valor3;
     totalPedido = totalPedido.toFixed(2);
     inserePrecoTotal(totalPedido);
+    return totalPedido;
 };
 
-//função de confirmação do pedido
-function confirmaPedido(){
-    var nome = prompt("Qual o seu nome?");
-    var endereço = prompt("Qual o endereço de entrega?");
-
+function ativarJanelaConfirmacao(){
     var janelaConfirmacao = document.querySelector('.janelaConfirmacao');
     janelaConfirmacao.style.display = "flex";
-};
+}
+
+
 
 
 //função de seleção do prato
