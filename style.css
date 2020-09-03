@@ -132,13 +132,17 @@ li img{
     width: 90px;
     height: 90px;
 }
+.iconeCheck{
+    display: none;
+}
 
 /*pratos do combo selecionados*/
 .selecionado{
     border: 5px solid #32B72F;
     position: relative;
 }
-.selecionado ion-icon{
+.selecionado .iconeCheck{
+    display: initial;
     color: #32B72F;
     font-size: 25px;
     position: absolute;

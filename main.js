@@ -106,7 +106,6 @@ while(i < loop1){
     var iconeCheck = document.createElement('ion-icon');
     iconeCheck.setAttribute('name','checkmark-circle');
     iconeCheck.setAttribute('class','iconeCheck');
-    iconeCheck.style.display = "none";
     pratoElement.appendChild(iconeCheck);
 
     //adicionando função seleção do item li
@@ -150,7 +149,6 @@ while(j < loop2){
     var iconeCheck = document.createElement('ion-icon');
     iconeCheck.setAttribute('name','checkmark-circle');
     iconeCheck.setAttribute('class','iconeCheck');
-    iconeCheck.style.display = "none";
     bebidaElement.appendChild(iconeCheck);
 
     //adicionando função seleção do item li
@@ -194,12 +192,10 @@ while(k < loop3){
     var iconeCheck = document.createElement('ion-icon');
     iconeCheck.setAttribute('name','checkmark-circle');
     iconeCheck.setAttribute('class','iconeCheck');
-    iconeCheck.style.display = "none";
     sobremesaElement.appendChild(iconeCheck);
 
     //adicionando função seleção do item li
     sobremesaElement.setAttribute('onclick', 'selecao(sobremesas, ' + k +')');
-
     sectionSobremesa.appendChild(sobremesaElement);
     k++;
 };
@@ -314,16 +310,16 @@ function selecao(item, pos){
     }else if(item[pos].id == "b5"){
         //bebida 1
         var selecao = document.querySelector(".bebida li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
         //bebida 2
         var selecao = document.querySelector(".bebida li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
         //bebida 3
         var selecao = document.querySelector(".bebida li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
         //bebida 4
         var selecao = document.querySelector(".bebida li:nth-child(4)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
         //bebida 5 - ON
         var selecao = document.querySelector(".bebida li:nth-child(5)");
         selecao.setAttribute('class','selecionado');
