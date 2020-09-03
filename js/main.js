@@ -12,24 +12,34 @@ function ativarBotao (){
     combo = combo.length;
     
     if(combo === 3){
-        var botaoAtivado = document.querySelector('footer button');
-        botaoAtivado.removeAttribute('disabled');
-        botaoAtivado.innerText = "Fechar pedido";
-        botaoAtivado.style.background = "#32B72F";
-        botaoAtivado.style.padding = "15px";
-        botaoAtivado.style.fontWeight = "bold";
-        botaoAtivado.setAttribute('onclick','confirmaPedido()');
+        mudaEstiloBotao();
     }
 };
+
+function mudaEstiloBotao(){
+    var botaoAtivado = document.querySelector('footer button');
+    botaoAtivado.removeAttribute('disabled');
+    botaoAtivado.innerText = "Fechar pedido";
+    botaoAtivado.style.background = "#32B72F";
+    botaoAtivado.style.padding = "15px";
+    botaoAtivado.style.fontWeight = "bold";
+    botaoAtivado.setAttribute('onclick','confirmaPedido()');
+}
 
 //função de confirmação do pedido
 function confirmaPedido(){
     var nome = prompt("Qual o seu nome?");
     var endereço = prompt("Qual o endereço de entrega?");
 
+    var janelaConfirmacao = document.querySelector('.janelaConfirmacao');
+    janelaConfirmacao.style.display = "flex";
 }
 
-
+//função para sair da tela de confirmação
+function cancelar(){
+    var janelaConfirmacao = document.querySelector('.janelaConfirmacao');
+    janelaConfirmacao.style.display = "none";
+}
 
 //função de seleção do prato
 function selecao(item, pos){
@@ -75,6 +85,11 @@ function selecao(item, pos){
 
 
 
+
+
+
+
+
 //----------------------------------------ativação da seleção dos prato e desmarcação dos outros -------------
 function ativaPrato1(){
     //prato 1 - ON
@@ -111,6 +126,8 @@ function ativaPrato3(){
     var selecao = document.querySelector(".prato li:nth-child(3)");
     selecao.setAttribute('class','selecionado');
 };
+
+
 
 
 //----------------------------------------ativação da seleção das bebidas e desmarcação dos outros -------------
@@ -203,6 +220,8 @@ function ativaBebida5(){
     var selecao = document.querySelector(".bebida li:nth-child(5)");
     selecao.setAttribute('class','selecionado');
 };
+
+
 
 //----------------------------------------ativação da seleção das sobremesas e desmarcação dos outros -------------
 function ativaSobremesa1(){
