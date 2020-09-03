@@ -102,6 +102,12 @@ while(i < loop1){
     var textPreco = document.createTextNode("R$ " + pratos[i].preço);
     precoPrato.appendChild(textPreco);
     pratoElement.appendChild(precoPrato);
+    //icone de check
+    var iconeCheck = document.createElement('ion-icon');
+    iconeCheck.setAttribute('name','checkmark-circle');
+    iconeCheck.setAttribute('class','iconeCheck');
+    iconeCheck.style.display = "none";
+    pratoElement.appendChild(iconeCheck);
 
     //adicionando função seleção do item li
     pratoElement.setAttribute('onclick', 'selecao(pratos, ' + i +')');
@@ -140,6 +146,12 @@ while(j < loop2){
     var textPrecoBebida = document.createTextNode("R$ " + bebidas[j].preço);
     precoBebida.appendChild(textPrecoBebida);
     bebidaElement.appendChild(precoBebida);
+    //icone de check
+    var iconeCheck = document.createElement('ion-icon');
+    iconeCheck.setAttribute('name','checkmark-circle');
+    iconeCheck.setAttribute('class','iconeCheck');
+    iconeCheck.style.display = "none";
+    bebidaElement.appendChild(iconeCheck);
 
     //adicionando função seleção do item li
     bebidaElement.setAttribute('onclick', 'selecao(bebidas, ' + j +')');
@@ -178,6 +190,12 @@ while(k < loop3){
     var textPrecoSobremesa = document.createTextNode("R$ " + sobremesas[k].preço);
     precoSobremesa.appendChild(textPrecoSobremesa);
     sobremesaElement.appendChild(precoSobremesa);
+    //icone de check
+    var iconeCheck = document.createElement('ion-icon');
+    iconeCheck.setAttribute('name','checkmark-circle');
+    iconeCheck.setAttribute('class','iconeCheck');
+    iconeCheck.style.display = "none";
+    sobremesaElement.appendChild(iconeCheck);
 
     //adicionando função seleção do item li
     sobremesaElement.setAttribute('onclick', 'selecao(sobremesas, ' + k +')');
@@ -185,6 +203,8 @@ while(k < loop3){
     sectionSobremesa.appendChild(sobremesaElement);
     k++;
 };
+
+
 
 //função de seleção do prato
 function selecao(item, pos){
