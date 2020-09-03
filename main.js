@@ -189,104 +189,156 @@ while(k < loop3){
 //função de seleção do prato
 function selecao(item, pos){
     var selecionado = item[pos];
-    console.log(selecionado);
     
     if(item[pos].id == "p1"){
+        //prato 1 - ON
         var selecao = document.querySelector(".prato li:nth-child(1)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //prato 2
         var selecao = document.querySelector(".prato li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //prato 3
         var selecao = document.querySelector(".prato li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     } else if(item[pos].id == "p2"){
+        //prato 1
         var selecao = document.querySelector(".prato li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //prato 2 - ON
         var selecao = document.querySelector(".prato li:nth-child(2)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //prato 3
         var selecao = document.querySelector(".prato li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     } else if(item[pos].id == "p3"){
+        //prato 1
         var selecao = document.querySelector(".prato li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //prato 2
         var selecao = document.querySelector(".prato li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //prato 3 - ON
         var selecao = document.querySelector(".prato li:nth-child(3)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+
     }else if(item[pos].id == "b1"){
+        //bebida 1 - ON
         var selecao = document.querySelector(".bebida li:nth-child(1)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //bebida 2
         var selecao = document.querySelector(".bebida li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 3
         var selecao = document.querySelector(".bebida li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 4
         var selecao = document.querySelector(".bebida li:nth-child(4)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 5
         var selecao = document.querySelector(".bebida li:nth-child(5)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     }else if(item[pos].id == "b2"){
+        //bebida 1
         var selecao = document.querySelector(".bebida li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 2 - ON
         var selecao = document.querySelector(".bebida li:nth-child(2)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //bebida 3
         var selecao = document.querySelector(".bebida li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 4
         var selecao = document.querySelector(".bebida li:nth-child(4)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 5
         var selecao = document.querySelector(".bebida li:nth-child(5)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     }else if(item[pos].id == "b3"){
+        //bebida 1
         var selecao = document.querySelector(".bebida li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 2
         var selecao = document.querySelector(".bebida li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 3 - ON
         var selecao = document.querySelector(".bebida li:nth-child(3)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //bebida 4
         var selecao = document.querySelector(".bebida li:nth-child(4)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 5
         var selecao = document.querySelector(".bebida li:nth-child(5)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     }else if(item[pos].id == "b4"){
+        //bebida 1
         var selecao = document.querySelector(".bebida li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 2
         var selecao = document.querySelector(".bebida li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 3
         var selecao = document.querySelector(".bebida li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //bebida 4 - ON
         var selecao = document.querySelector(".bebida li:nth-child(4)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //bebida 5
         var selecao = document.querySelector(".bebida li:nth-child(5)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     }else if(item[pos].id == "b5"){
+        //bebida 1
         var selecao = document.querySelector(".bebida li:nth-child(1)");
         selecao.style.border = "none";
+        //bebida 2
         var selecao = document.querySelector(".bebida li:nth-child(2)");
         selecao.style.border = "none";
+        //bebida 3
         var selecao = document.querySelector(".bebida li:nth-child(3)");
         selecao.style.border = "none";
+        //bebida 4
         var selecao = document.querySelector(".bebida li:nth-child(4)");
         selecao.style.border = "none";
+        //bebida 5 - ON
         var selecao = document.querySelector(".bebida li:nth-child(5)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+
     }else if(item[pos].id == "s1"){
+        //sobremesa 1 - ON
         var selecao = document.querySelector(".sobremesa li:nth-child(1)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //sobremesa 2
         var selecao = document.querySelector(".sobremesa li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //sobremesa 2
         var selecao = document.querySelector(".sobremesa li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     }else if(item[pos].id == "s2"){
+        //sobremesa 1
         var selecao = document.querySelector(".sobremesa li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //sobremesa 2 - ON
         var selecao = document.querySelector(".sobremesa li:nth-child(2)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
+        //sobremesa 3
         var selecao = document.querySelector(".sobremesa li:nth-child(3)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+
     }else if(item[pos].id == "s3"){
+        //sobremesa 1
         var selecao = document.querySelector(".sobremesa li:nth-child(1)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //sobremesa 2
         var selecao = document.querySelector(".sobremesa li:nth-child(2)");
-        selecao.style.border = "none";
+        selecao.removeAttribute('class');
+        //sobremesa 3 - ON
         var selecao = document.querySelector(".sobremesa li:nth-child(3)");
-        selecao.style.border = "1px solid green";
+        selecao.setAttribute('class','selecionado');
     }
 }
