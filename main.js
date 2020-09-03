@@ -206,6 +206,8 @@ while(k < loop3){
 function selecao(item, pos){
     var selecionado = item[pos];
     
+
+    //adiciona estilo ao item selecionado:
     if(item[pos].id == "p1"){
         //prato 1 - ON
         var selecao = document.querySelector(".prato li:nth-child(1)");
@@ -358,6 +360,12 @@ function selecao(item, pos){
         selecao.setAttribute('class','selecionado');
     }
     ativaBotao();
+
+    //criando janela de confirmação do pedido
+    console.log(selecionado);
+    var janelaConfirmação = document.querySelector('.janelaConfirmacao');
+    //inserção dos itens na janela
+    
 };
 
 //botão é ativado quando seleciona 3 itens
@@ -380,5 +388,5 @@ function ativaBotao (){
 function confirmaPedido(){
     var nome = prompt("Qual o seu nome?");
     var endereço = prompt("Qual o endereço de entrega?");
-    
+
 }
