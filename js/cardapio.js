@@ -4,19 +4,19 @@ var pratos = [
     link: "img/baiao.jpg",
     prato: "baião de dois", 
     descricao: "feijão de corda e arroz, acompanhando de carne de sol e queijo", 
-    preço: "19,00"},
+    preço: "19.00"},
 
     {id: "p2",
     link: "img/moqueca.jpg",
     prato: "moqueca de banana da terra", 
     descricao: "tradicional moqueca baiana na versão vegana", 
-    preço: "17,00"},
+    preço: "17.00"},
 
     {id: "p3",
     link: "img/tainha.jpg",
     prato: "tainha na taquara", 
     descricao: "tainha acompanhada de pirão e farofa de castanha do Brasil", 
-    preço: "22,00"}
+    preço: "22.00"}
 ];
 
 var bebidas = [
@@ -24,31 +24,31 @@ var bebidas = [
     link: "img/coca.jpg",
     prato: "coquinha gelada", 
     descricao: "lata 350ml", 
-    preço: "5,00"},
+    preço: "5.00"},
 
     {id: "b2",
     link: "img/cocaZ.jpg",
     prato: "coquinha gelada zero", 
     descricao: "lata 350ml", 
-    preço: "5,00"},
+    preço: "5.00"},
 
     {id: "b3",
     link: "img/pepsi.jpg",
     prato: "pepsi, pode ser?", 
     descricao: "lata 350ml", 
-    preço: "6,00"},
+    preço: "6.00"},
 
     {id: "b4",
     link: "img/pepsiZ.jpg",
     prato: "pepsi zero, pode ser?", 
     descricao: "lata 350ml", 
-    preço: "6,00"},
+    preço: "6.00"},
 
     {id: "b5",
     link: "img/pepsiTwist.jpg",
     prato: "pepsi twist, pode ser?", 
     descricao: "lata 350ml", 
-    preço: "5,00"}
+    preço: "5.00"}
 ];
 
 var sobremesas = [
@@ -56,17 +56,17 @@ var sobremesas = [
     link: "img/pudim.jpg",
     prato: "pudim", 
     descricao: "pudim de leite condensado", 
-    preço: "4,00"},
+    preço: "4.00"},
 
     {id: "s2",
     link: "img/tiramisu.jpg",
     prato: "tiramisù", 
     descricao: "sobremesa de creme de chocolate e café", 
-    preço: "7,00"},
+    preço: "7.00"},
 
     {id: "s3",
     link: "img/tortinha.jpg",
     prato: "torta de limão", 
     descricao: "clássica torta de limão francesa", 
-    preço: "8,00"}
+    preço: "8.00"}
 ];

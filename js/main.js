@@ -42,8 +42,16 @@ function pegaNomeEPreço(){
     var sobremesaNome = itensNome[2].innerText;
     var sobremesaPreco = itensPreço[2].innerText;
     insereItemCombo(sobremesaNome, sobremesaPreco);
+
+    valor1 = converteNumber(pratoPreco);
+    valor2 = converteNumber(bebidaPreco);
+    valor3 = converteNumber(sobremesaPreco);
+
+    calculaTotal(valor1,valor2,valor3);
 };
 
+
+//inserção dos dados do pedido na janela de confirmação
 function insereItemCombo(span1, span2){
     var pedido = document.querySelector('.pedido');
 
@@ -64,6 +72,42 @@ function insereItemCombo(span1, span2){
     pedido.appendChild(itemCombo);
 };
 
+function inserePrecoTotal(totalPedido){
+    var pedido = document.querySelector('.pedido');
+
+    //criando a linha de total na janela
+    var total = document.createElement('div');
+    total.setAttribute('class','total');
+
+    //inserindo span com o nome da linha
+    var nome = document.createElement('span');
+    nome.innerText = "total";
+    total.appendChild(nome);
+
+    //inserindo o valor total
+    var preco = document.createElement('span');
+    preco.innerText = totalPedido;
+    total.appendChild(preco);
+
+    //inserindo informações na linha
+    pedido.appendChild(total);
+}
+
+
+
+//convertendo o preço de string para number
+function converteNumber(valor){
+    valor = valor.substr(4);
+    return parseFloat(valor);
+};
+
+//calculando o valor total do pedido
+function calculaTotal(valor1,valor2,valor3){
+    var totalPedido = valor1 + valor2 + valor3;
+    totalPedido = totalPedido.toFixed(2);
+    inserePrecoTotal(totalPedido);
+};
+
 //função de confirmação do pedido
 function confirmaPedido(){
     var nome = prompt("Qual o seu nome?");
@@ -73,11 +117,6 @@ function confirmaPedido(){
     janelaConfirmacao.style.display = "flex";
 };
 
-//função para sair da tela de confirmação
-function cancelar(){
-    var janelaConfirmacao = document.querySelector('.janelaConfirmacao');
-    janelaConfirmacao.style.display = "none";
-}
 
 //função de seleção do prato
 function selecao(item, pos){
