@@ -28,10 +28,10 @@ function mudaEstiloBotao(){
 
 //função de confirmação do pedido
 function confirmaPedido(){
+    ativarJanelaConfirmacao();
+
     var arrayPedido = pegaNomeEPreço();
     var dados = pedirNomeEndereco();
-    
-    ativarJanelaConfirmacao();
 
     var mensagem = mensagemFinal(arrayPedido,dados);
     
@@ -62,7 +62,7 @@ function inserirLinkWhats(mensagem){
     
     var btnPedir = document.querySelector('.pedir a');
     btnPedir.setAttribute('href', linkFazerPedido);
-}
+};
 
 
 function pegaNomeEPreço(){
@@ -132,7 +132,7 @@ function inserePrecoTotal(totalPedido){
 
     //inserindo o valor total
     var preco = document.createElement('span');
-    preco.innerText = totalPedido;
+    preco.innerText = "R$ "+ totalPedido;
     total.appendChild(preco);
 
     //inserindo informações na linha
