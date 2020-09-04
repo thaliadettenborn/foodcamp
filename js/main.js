@@ -1,3 +1,5 @@
+//---------------------------------------------------------------------------renderização do cardápio do foodcamp
+
 function main (){
     inserirPratos();
     inserirBebidas();
@@ -6,7 +8,7 @@ function main (){
 main();
 
 
-//botão é ativado quando seleciona 3 itens
+//---------------------------------------------------------------função para ativação do botão quando seleciona 3 itens
 function ativarBotao (){
     var combo = document.querySelectorAll('.selecionado');
     combo = combo.length;
@@ -16,17 +18,8 @@ function ativarBotao (){
     };
 };
 
-function mudaEstiloBotao(){
-    var botaoAtivado = document.querySelector('footer button');
-    botaoAtivado.removeAttribute('disabled');
-    botaoAtivado.innerText = "Fechar pedido";
-    botaoAtivado.style.background = "#32B72F";
-    botaoAtivado.style.padding = "15px";
-    botaoAtivado.style.fontWeight = "bold";
-    botaoAtivado.setAttribute('onclick','confirmaPedido()');
-};
 
-//função de confirmação do pedido
+//--------------------------------------------------------------------------------------função de confirmação do pedido
 function confirmaPedido(){
     ativarJanelaConfirmacao();
 
@@ -38,6 +31,8 @@ function confirmaPedido(){
     inserirLinkWhats(mensagem);
 };
 
+
+//-----------------------------------------------------------------função que criar a mensagem final e converte para URI
 function mensagemFinal(arrayPedido,dados){
     var prato = "- Prato: " + arrayPedido[0] + "\n";
     var bebida = "- Bebida: " + arrayPedido[1] + "\n";
@@ -53,18 +48,29 @@ function mensagemFinal(arrayPedido,dados){
     return encodeURIComponent(mensagemWhats);
 }
 
+
+//---------------------------------------------------------------------função que insere o link do whats no botão .pedir
 function inserirLinkWhats(mensagem){
-    var inicioLink = "https://api.whatsapp.com/send?phone=";
-    var telRestaurante = "5551986442061";
-    var fimLink = "&text=" + mensagem;
-    
-    var linkFazerPedido = inicioLink + telRestaurante + fimLink;
+    var linkFazerPedido = criarLinkWhats(mensagem);
     
     var btnPedir = document.querySelector('.pedir a');
     btnPedir.setAttribute('href', linkFazerPedido);
 };
 
 
+
+//------------------------------------------------------------função cria o link do whats app para falar com o restaurante
+function criarLinkWhats(mensagem){
+    var inicioLink = "https://api.whatsapp.com/send?phone=";
+    var telRestaurante = "5551986442061";
+    var fimLink = "&text=" + mensagem;
+
+    return inicioLink + telRestaurante + fimLink;
+}
+
+
+
+//---------------------------------------------------função pega o nome e o preço dos itens pedidos e insere em uma array
 function pegaNomeEPreço(){
     var itensNome = document.querySelectorAll('.selecionado h3');
     var itensPreço = document.querySelectorAll('.selecionado h5');
@@ -90,14 +96,9 @@ function pegaNomeEPreço(){
     return [pratoNome,bebidaNome,sobremesaNome,total];
 };
 
-function pedirNomeEndereco(){
-    var nome = prompt("Qual o seu nome?");
-    var endereço = prompt("Qual o endereço de entrega?");
-    return [nome,endereço];
-}
 
 
-//inserção dos dados do pedido na janela de confirmação
+//---------------------------------------------------inserção dos itens do pedido e o preço total na janela de confirmação
 function insereItemCombo(span1, span2){
     var pedido = document.querySelector('.pedido');
 
@@ -141,13 +142,13 @@ function inserePrecoTotal(totalPedido){
 
 
 
-//convertendo o preço de string para number
+//-----------------------------------------------------------------------convertendo o preço de string para number
 function converteNumber(valor){
     valor = valor.substr(3);
     return parseFloat(valor);
 };
 
-//calculando o valor total do pedido
+//-------------------------------------------------------------------------------calculando o valor total do pedido
 function calculaTotal(valor1,valor2,valor3){
     var totalPedido = valor1 + valor2 + valor3;
     totalPedido = totalPedido.toFixed(2);
@@ -155,15 +156,14 @@ function calculaTotal(valor1,valor2,valor3){
     return totalPedido;
 };
 
-function ativarJanelaConfirmacao(){
-    var janelaConfirmacao = document.querySelector('.janelaConfirmacao');
-    janelaConfirmacao.style.display = "flex";
+//-----------------------------------------------------------------------------pedindo o nome e endereço do cliente
+function pedirNomeEndereco(){
+    var nome = prompt("Qual o seu nome?");
+    var endereço = prompt("Qual o endereço de entrega?");
+    return [nome,endereço];
 }
 
-
-
-
-//função de seleção do prato
+//-------------------------------------------------------------------------------------função de seleção do prato
 function selecao(item, pos){
     var selecionado = item[pos];
     
@@ -201,183 +201,8 @@ function selecao(item, pos){
     else if(item[pos].id == "s3")
         ativaSobremesa3();
     
-    //quando selecionar 3 itens do combo vai ativar o botão
+
+    
+    //quando clicar em algo chama a função para confirmar se já escolheu 3 itens 
     ativarBotao();
-};
-
-
-
-
-
-
-
-
-//----------------------------------------ativação da seleção dos prato e desmarcação dos outros -------------
-function ativaPrato1(){
-    //prato 1 - ON
-    var selecao = document.querySelector(".prato li:nth-child(1)");
-    selecao.setAttribute('class','selecionado');
-    //prato 2
-    var selecao = document.querySelector(".prato li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //prato 3
-    var selecao = document.querySelector(".prato li:nth-child(3)");
-    selecao.removeAttribute('class');
-};
-
-function ativaPrato2(){
-    //prato 1
-    var selecao = document.querySelector(".prato li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //prato 2 - ON
-    var selecao = document.querySelector(".prato li:nth-child(2)");
-    selecao.setAttribute('class','selecionado');
-    //prato 3
-    var selecao = document.querySelector(".prato li:nth-child(3)");
-    selecao.removeAttribute('class');
-};
-
-function ativaPrato3(){
-    //prato 1
-    var selecao = document.querySelector(".prato li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //prato 2
-    var selecao = document.querySelector(".prato li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //prato 3 - ON
-    var selecao = document.querySelector(".prato li:nth-child(3)");
-    selecao.setAttribute('class','selecionado');
-};
-
-
-
-
-//----------------------------------------ativação da seleção das bebidas e desmarcação dos outros -------------
-function ativaBebida1(){
-    //bebida 1 - ON
-    var selecao = document.querySelector(".bebida li:nth-child(1)");
-    selecao.setAttribute('class','selecionado');
-    //bebida 2
-    var selecao = document.querySelector(".bebida li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //bebida 3
-    var selecao = document.querySelector(".bebida li:nth-child(3)");
-    selecao.removeAttribute('class');
-    //bebida 4
-    var selecao = document.querySelector(".bebida li:nth-child(4)");
-    selecao.removeAttribute('class');
-    //bebida 5
-    var selecao = document.querySelector(".bebida li:nth-child(5)");
-    selecao.removeAttribute('class');
-};
-
-function ativaBebida2(){
-    //bebida 1
-    var selecao = document.querySelector(".bebida li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //bebida 2 - ON
-    var selecao = document.querySelector(".bebida li:nth-child(2)");
-    selecao.setAttribute('class','selecionado');
-    //bebida 3
-    var selecao = document.querySelector(".bebida li:nth-child(3)");
-    selecao.removeAttribute('class');
-    //bebida 4
-    var selecao = document.querySelector(".bebida li:nth-child(4)");
-    selecao.removeAttribute('class');
-    //bebida 5
-    var selecao = document.querySelector(".bebida li:nth-child(5)");
-    selecao.removeAttribute('class');
-};
-
-function ativaBebida3(){
-    //bebida 1
-    var selecao = document.querySelector(".bebida li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //bebida 2
-    var selecao = document.querySelector(".bebida li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //bebida 3 - ON
-    var selecao = document.querySelector(".bebida li:nth-child(3)");
-    selecao.setAttribute('class','selecionado');
-    //bebida 4
-    var selecao = document.querySelector(".bebida li:nth-child(4)");
-    selecao.removeAttribute('class');
-    //bebida 5
-    var selecao = document.querySelector(".bebida li:nth-child(5)");
-    selecao.removeAttribute('class');
-};
-
-function ativaBebida4(){
-    //bebida 1
-    var selecao = document.querySelector(".bebida li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //bebida 2
-    var selecao = document.querySelector(".bebida li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //bebida 3
-    var selecao = document.querySelector(".bebida li:nth-child(3)");
-    selecao.removeAttribute('class');
-    //bebida 4 - ON
-    var selecao = document.querySelector(".bebida li:nth-child(4)");
-    selecao.setAttribute('class','selecionado');
-    //bebida 5
-    var selecao = document.querySelector(".bebida li:nth-child(5)");
-    selecao.removeAttribute('class');
-};
-
-function ativaBebida5(){
-    //bebida 1
-    var selecao = document.querySelector(".bebida li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //bebida 2
-    var selecao = document.querySelector(".bebida li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //bebida 3
-    var selecao = document.querySelector(".bebida li:nth-child(3)");
-    selecao.removeAttribute('class');
-    //bebida 4
-    var selecao = document.querySelector(".bebida li:nth-child(4)");
-    selecao.removeAttribute('class');
-    //bebida 5 - ON
-    var selecao = document.querySelector(".bebida li:nth-child(5)");
-    selecao.setAttribute('class','selecionado');
-};
-
-
-
-//----------------------------------------ativação da seleção das sobremesas e desmarcação dos outros -------------
-function ativaSobremesa1(){
-    //sobremesa 1 - ON
-    var selecao = document.querySelector(".sobremesa li:nth-child(1)");
-    selecao.setAttribute('class','selecionado');
-    //sobremesa 2
-    var selecao = document.querySelector(".sobremesa li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //sobremesa 2
-    var selecao = document.querySelector(".sobremesa li:nth-child(3)");
-    selecao.removeAttribute('class');
-};
-
-function ativaSobremesa2(){
-    //sobremesa 1
-    var selecao = document.querySelector(".sobremesa li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //sobremesa 2 - ON
-    var selecao = document.querySelector(".sobremesa li:nth-child(2)");
-    selecao.setAttribute('class','selecionado');
-    //sobremesa 3
-    var selecao = document.querySelector(".sobremesa li:nth-child(3)");
-    selecao.removeAttribute('class');
-};
-
-function ativaSobremesa3(){
-    //sobremesa 1
-    var selecao = document.querySelector(".sobremesa li:nth-child(1)");
-    selecao.removeAttribute('class');
-    //sobremesa 2
-    var selecao = document.querySelector(".sobremesa li:nth-child(2)");
-    selecao.removeAttribute('class');
-    //sobremesa 3 - ON
-    var selecao = document.querySelector(".sobremesa li:nth-child(3)");
-    selecao.setAttribute('class','selecionado');
 };
