@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Foodcamp</title>
+
+    <!----------------------------Arquivos css aplicados na pag--------------------------------->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!----------------------------icone do foodcamp da guia do navegador--------------------------------->
     <link rel="shortcut icon" href="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7ac0e6d6-adad-407b-ac44-47255b772309%2FGroup_18.png?table=block&id=bb6d739d-dced-4a47-89e3-b68717fdf43c&width=200&userId=&cache=v2" type="image/x-icon">
+
+    <!----------------------------embed fontes aplicadas na página--------------------------------->
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!----------------------------menu do topo--------------------------------->
     <header>
         <h1>FoodCamp</h1>
         <h4>Sua comida em 6 minutos</h4>
     </header>
 
     <main>
+        <!---------------------cardápio do foodcamp #INSERÇÃO DOS PRATOS VIA MENU.JS#---------------------------->
+
+
+        <!--#INSERÇÃO DO PRATOS VIA MENU.JS E DEFINIÇÃO DOS ITEMS DO MENU NO CARDAPIO.JS#-->
         <section class="prato">
             <h2>Primeiro, seu prato</h2>
             <ul></ul>
@@ -31,14 +42,10 @@
             <h2>Por fim, sua sobremesa</h2>
             <ul></ul>
         </section>
+        <!--#INSERÇÃO DO PRATOS VIA MENU.JS E DEFINIÇÃO DOS ITEMS DO MENU NO CARDAPIO.JS#-->
     </main>
-    
-    <footer>
-        <button disabled>
-            Selecione os 3 itens<br> para fechar o pedido
-        </button>
-    </footer>
 
+    <!----------------------------tela de confirmação do pedido--------------------------------->
     <aside class="janelaConfirmacao">
         <div class="confirmacao">
             <h3>Confirme seu pedido:</h3>
@@ -50,10 +57,17 @@
         </div>
     </aside>
     
+    <!----------------------------menu do botão fazer pedido--------------------------------->
+    <footer>
+        <button disabled>
+            Selecione os 3 itens<br> para fechar o pedido
+        </button>
+    </footer>
+
+
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/cardapio.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>
