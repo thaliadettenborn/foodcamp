@@ -21,7 +21,6 @@ function ativarJanelaConfirmacao(){
 //--------------------------------função que ativa a janela final após o pedido ser enviado ao site
 function telaAgradecimento(){
     var janelaFinal = document.querySelector('.confirmacao');
-    console.log(janelaFinal);
     janelaFinal.style.background = "#CF2B2B";
     janelaFinal.innerHTML = "";
     janelaFinal.innerText = "REDIRECIONANDO...";
