@@ -1,4 +1,15 @@
-//cardápio do foodcamp
+//-----------------------------------------------cardápio do foodcamp-----------------------------------------------
+/*obs:
+
+1. caso seja inserido mais um item a qualquer menu é necessário fazer ajustes na função selecao() em main.js
+2. Ver tbm as funções que ativa a seleção num prato x e removem a seleção de outros em main.js
+3. Não inserir valores com "," ex "15,50" somente com ".". O js não vai calcular o valor total se o nº tiver ","
+
+*/
+
+
+//---------------------------------pratos:
+
 var pratos = [
     {id: "p1",
     link: "img/baiao.jpg",
@@ -19,6 +30,8 @@ var pratos = [
     preço: "21.90"}
 ];
 
+
+//---------------------------------bebidas:
 var bebidas = [
     {id: "b1",
     link: "img/coca.jpg",
@@ -51,6 +64,9 @@ var bebidas = [
     preço: "5.50"}
 ];
 
+
+
+//---------------------------------sobremesas:
 var sobremesas = [
     {id: "s1",
     link: "img/pudim.jpg",
