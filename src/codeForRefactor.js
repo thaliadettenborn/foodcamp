@@ -153,54 +153,6 @@ function pedirNomeEndereco(){
     return [nome,endereço];
 }
 
-//-------------------------------------------------------------------------------------função de seleção do prato
-function selecao(item, pos){
-    var selecionado = item[pos];
-    
-    //adiciona estilo ao item selecionado:
-    if(item[pos].id == "p1")
-        ativaPrato1();
-
-    else if(item[pos].id == "p2")
-        ativaPrato2();
-
-    else if(item[pos].id == "p3")
-        ativaPrato3();
-
-    else if(item[pos].id == "b1")
-        ativaBebida1();
-
-    else if(item[pos].id == "b2")
-        ativaBebida2();
-
-    else if(item[pos].id == "b3")
-        ativaBebida3();
-
-    else if(item[pos].id == "b4")
-        ativaBebida4();
-
-    else if(item[pos].id == "b5")
-        ativaBebida5();
-
-    else if(item[pos].id == "s1")
-        ativaSobremesa1();
-
-    else if(item[pos].id == "s2")
-        ativaSobremesa2();
-
-    else if(item[pos].id == "s3")
-        ativaSobremesa3();
-    
-
-    
-    //quando clicar em algo chama a função para confirmar se já escolheu 3 itens 
-    ativarBotao();
-};
-
-
-//-----------------------------arquivo com todas as funções que fazem mudança de estilo css na página---------------------
-
-
 //------------------------------função para mudar o estilo do botão ativado
 function mudaEstiloBotao(){
     var botaoAtivado = document.querySelector('footer button');
