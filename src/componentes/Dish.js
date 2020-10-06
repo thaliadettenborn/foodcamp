@@ -1,5 +1,3 @@
-// pratoElement.setAttribute('onclick', 'selecao(pratos, ' + i +')');
-
 import React, {useState} from 'react';
 
 export default function Dish(props){
@@ -8,7 +6,7 @@ export default function Dish(props){
 
     return (
         <li 
-            className={selected && "selecionado"}
+            className={selected && "selected"}
             onClick={() => setSelection(true)}
         >
             <img src={src} alt={dish}/>
@@ -18,3 +16,5 @@ export default function Dish(props){
         </li>
     )
 }
+
+function 

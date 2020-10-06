@@ -17,7 +17,7 @@ export default function Main(){
 var {plates,beverages,desserts} = menu;
 function Dishes(){
     return (
-        <section className="prato">
+        <section className="plates">
             <h2>Primeiro, seu prato</h2>
             <ul>
                 {plates.map(d =>
@@ -29,7 +29,7 @@ function Dishes(){
 }
 function Beverages(){
     return (
-        <section className="bebida">
+        <section className="beverages">
             <h2>Agora, sua bebida</h2>
             <ul>
                 {beverages.map(b =>
@@ -41,7 +41,7 @@ function Beverages(){
 }
 function Desserts(){
     return (
-        <section className="sobremesa">
+        <section className="desserts">
             <h2>Agora, sua bebida</h2>
             <ul>
                 {desserts.map(d =>
