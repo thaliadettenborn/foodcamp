@@ -21,31 +21,31 @@ var menu = {
     ],
     beverages:[
         {
-            beverage: "coquinha gelada",
+            dish: "coquinha gelada",
             src: "img/coca.jpg",
             description: "lata 350ml",
             price: "5,50"
         },
         {
-            beverage: "coquinha gelada zero",
+            dish: "coquinha gelada zero",
             src: "img/cocaZ.jpg",
             description: "lata 350ml",
             price: "5,00"
         },
         {
-            beverage: "pepsi, pode ser?",
+            dish: "pepsi, pode ser?",
             src: "img/pepsi.jpg",
             description: "lata 350ml",
             price: "6,50"
         },
         {
-            beverage: "pepsi zero, pode ser?",
+            dish: "pepsi zero, pode ser?",
             src: "img/pepsiZ.jpg",
             description: "lata 350ml",
             price: "6,00"
         },
         {
-            beverage: "pepsi twist, pode ser?",
+            dish: "pepsi twist, pode ser?",
             src: "img/pepsiTwist.jpg",
             description: "lata 350ml",
             price: "5,50"
@@ -53,19 +53,19 @@ var menu = {
     ],
     desserts:[
         {
-            dessert: "pudim",
+            dish: "pudim",
             src: "img/pudim.jpg",
             description: "pudim de leite condensado",
             price: "6,90"
         },
         {
-            dessert: "tiramisù",
+            dish: "tiramisù",
             src: "img/tiramisu.jpg",
             description: "sobremesa de creme de chocolate e café",
             price: "10,70"
         },
         {
-            dessert: "torta de limão",
+            dish: "torta de limão",
             src: "img/tortinha.jpg",
             description: "clássica torta de limão francesa",
             price: "12,50"
@@ -73,4 +73,4 @@ var menu = {
     ]
 }
 
-export default {menu}
+export default menu;
