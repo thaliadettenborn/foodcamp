@@ -1,4 +1,4 @@
-export default var menu = {
+var menu = {
     plates: [
         {
             dish: "baião de dois",
@@ -28,7 +28,7 @@ export default var menu = {
         },
         {
             beverage: "coquinha gelada zero",
-            src: "img/cocaZ.jpg"
+            src: "img/cocaZ.jpg",
             description: "lata 350ml",
             price: "5,00"
         },
@@ -72,3 +72,5 @@ export default var menu = {
         }
     ]
 }
+
+export default {menu}
