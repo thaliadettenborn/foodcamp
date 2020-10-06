@@ -2,7 +2,7 @@
   "name": "foodcamp",
   "version": "1.0.0",
   "description": "Projeto de desenvolvimento front-end com HTML, CSS e JS para uma empresa fictícia 'FOODCAMP', que possui um site onde o cliente montar o combo dele com prato + bebida + sobremesa e envia o pedido via Whatsapp e recebe ele em 6 minutos. O projeto foi realizado durante bootcamp dev full stack do Responde Aí",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
