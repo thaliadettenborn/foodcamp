@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 export default function Dish(props){
     var {dish,src,description,price,key} = props;
@@ -11,9 +11,13 @@ export default function Dish(props){
         setAmount(1)
         setSelection(false)
     }
+    (selected) && (setTimeout(activateButton,0));
 
     return (
         <li 
+            data-name={dish}
+            data-price={price}
+            data-amount={amount}
             className={selected && "selected"}
             onClick={() => setSelection(true)}
         >
@@ -33,3 +37,17 @@ export default function Dish(props){
         </li>
     )
 }
+
+function activateButton(){
+    var orderPlates = document.querySelectorAll('.plates .selected');
+    var orderBeverages = document.querySelectorAll('.beverages .selected');
+    var orderDesserts = document.querySelectorAll('.desserts .selected');
+
+    var numberOfItemsInCategories = (orderPlates.length) && (orderBeverages.length) && (orderDesserts.length);
+    console.log(numberOfItemsInCategories);
+
+    if(numberOfItemsInCategories){
+    //     mudaEstiloBotao();
+        console.log("combo feito")
+    };
+};

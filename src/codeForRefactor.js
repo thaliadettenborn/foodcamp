@@ -169,17 +169,3 @@ function ativarJanelaConfirmacao(){
     var janelaConfirmacao = document.querySelector('.janelaConfirmacao');
     janelaConfirmacao.style.display = "flex";
 };
-
-//--------------------------------função que ativa a janela final após o pedido ser enviado ao site
-function telaAgradecimento(){
-    var janelaFinal = document.querySelector('.confirmacao');
-    janelaFinal.style.background = "#CF2B2B";
-    janelaFinal.innerHTML = "";
-    janelaFinal.innerText = "REDIRECIONANDO...";
-    janelaFinal.style.fontFamily = "'Righteous', cursive";
-    janelaFinal.style.fontSize = "30px";
-    janelaFinal.style.padding = "175px 30px";
-    janelaFinal.style.color = "white";
-    janelaFinal.style.fontWeight = "bold";
-    janelaFinal.style.textAlign = "center";
-}
