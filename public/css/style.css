@@ -116,7 +116,6 @@ p{
 }
 -webkit-scrollbar {
     width: 0px;
-    background: transparent;
 }
 .plates li, .beverages li, .desserts li{
     width: 170px;
@@ -145,6 +144,14 @@ li img{
 .count{
     display: none;
 }
+.green{
+    color: #7bd375;
+    margin-left: 5px;
+}
+.red{
+    color: #b85a64;
+    margin-right: 5px;
+}
 
 /*------------------------------------------platess do combo selecteds-------------------------------------------*/
 .selected{
@@ -155,7 +162,7 @@ li img{
 }
 .selected .count{
     display: initial;
-    font-size: 25px;
+    font-size: 18px;
     position: absolute;
     bottom: 10px;
     right: 10px;
