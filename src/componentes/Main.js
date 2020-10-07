@@ -20,8 +20,8 @@ function Dishes(){
         <section className="plates">
             <h2>Primeiro, seu prato</h2>
             <ul>
-                {plates.map(d =>
-                    <Dish dish={d.dish} src={d.src} description={d.description} price={d.price} />
+                {plates.map((d,i) =>
+                    <Dish dish={d.dish} src={d.src} description={d.description} price={d.price} key={i}/>
                 )}
             </ul>
         </section>
@@ -32,8 +32,8 @@ function Beverages(){
         <section className="beverages">
             <h2>Agora, sua bebida</h2>
             <ul>
-                {beverages.map(b =>
-                    <Dish dish={b.dish} src={b.src} description={b.description} price={b.price} />
+                {beverages.map((b,i) =>
+                    <Dish dish={b.dish} src={b.src} description={b.description} price={b.price} key={i} />
                 )}
             </ul>
         </section>
@@ -44,8 +44,8 @@ function Desserts(){
         <section className="desserts">
             <h2>Agora, sua bebida</h2>
             <ul>
-                {desserts.map(d =>
-                    <Dish dish={d.dish} src={d.src} description={d.description} price={d.price} />
+                {desserts.map((d,i) =>
+                    <Dish dish={d.dish} src={d.src} description={d.description} price={d.price} key={i} />
                 )}
             </ul>
         </section>

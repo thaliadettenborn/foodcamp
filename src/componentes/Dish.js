@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function Dish(props){
-    var {dish,src,description,price} = props;
+    var {dish,src,description,price,key} = props;
     var [selected,setSelection] = useState(false);
     var [amount,setAmount] = useState(1);
 
@@ -25,7 +25,7 @@ export default function Dish(props){
                 <span className='red' onClick={() => setAmount(amount - 1)}>
                     <FontAwesomeIcon icon={faMinus} />
                 </span>
-                <span>{amount}</span>
+                <span className='numberDish'>{amount}</span>
                 <span className='green' onClick={() => setAmount(amount + 1)}>
                     <FontAwesomeIcon icon={faPlus} />
                 </span>
