@@ -12,7 +12,6 @@ export default function Main(){
     )
 }
 
-
 // --------------------------------------------------------------------------------------- RENDER
 var {plates,beverages,desserts} = menu;
 function Dishes(){

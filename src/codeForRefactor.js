@@ -1,14 +1,3 @@
-//---------------------------------------------------------------função para ativação do botão quando seleciona 3 itens
-function ativarBotao (){
-    var combo = document.querySelectorAll('.selecionado');
-    combo = combo.length;
-
-    if(combo === 3){
-        mudaEstiloBotao();
-    };
-};
-
-
 //--------------------------------------------------------------------------------------função de confirmação do pedido
 function confirmaPedido(){
     ativarJanelaConfirmacao();

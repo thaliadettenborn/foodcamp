@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { changeStyleButton } from './Footer';
 
 export default function Dish(props){
     var {dish,src,description,price,key} = props;
@@ -44,10 +45,9 @@ function activateButton(){
     var orderDesserts = document.querySelectorAll('.desserts .selected');
 
     var numberOfItemsInCategories = (orderPlates.length) && (orderBeverages.length) && (orderDesserts.length);
-    console.log(numberOfItemsInCategories);
+    console.log(numberOfItemsInCategories)
 
     if(numberOfItemsInCategories){
-    //     mudaEstiloBotao();
-        console.log("combo feito")
+        changeStyleButton();
     };
 };
