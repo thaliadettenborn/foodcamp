@@ -8,8 +8,8 @@ export default function Dish(props){
     var [amount,setAmount] = useState(1);
 
     if(amount === 0){
-        amount = 1;
-        selected = false;
+        setAmount(1)
+        setSelection(false)
     }
 
     return (
