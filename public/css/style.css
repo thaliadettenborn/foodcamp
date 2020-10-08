@@ -47,21 +47,29 @@ footer{
     z-index: 10;
 }
 footer button{
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    color: #FFFFFF;
-    font-weight: 100;
-    padding: 5px 30px;
     background: #CBCBCB;
     width: 80%;
     border-radius: 30px;
     border: none;
     transition: background 200ms ease-in-out;
 }
-button.activated{
-    background: #32B72F;
+button span{
+    display: inline-block;
+    padding: 5px 30px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+button.activated span{
     padding: 15px;
     font-weight: bold;
+}
+button.activated{
+    background: #32B72F;
 }
 
 /*------------------------------------------------estilo dos titulos------------------------------------------------*/
@@ -141,6 +149,7 @@ p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 li img{
     width: 150px;

@@ -9,3 +9,10 @@
 //         </div>
 //     </div>
 // </aside>
+import React from 'react';
+
+export default function ReviewScreen(params) {
+    return (
+        <h1>teste</h1>
+    )
+}
