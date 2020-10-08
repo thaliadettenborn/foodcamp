@@ -5,7 +5,10 @@ export default function Footer(props){
     console.log(activedButton);
     return (
         <footer>
-            <button className={activedButton && 'activated'} onClick={reviewOrder}>
+            <button 
+                className={activedButton && 'activated'} 
+                onClick={activedButton &&  reviewOrder}
+            >
                 {activedButton ? 'Revisar Pedido' : 'Selecione os 3 itens para fechar o pedido'}
             </button>
         </footer>

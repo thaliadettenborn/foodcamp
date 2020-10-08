@@ -5,10 +5,8 @@ import Footer from './Footer';
 
 
 export default function App(){
-    var [activedButton, setStateButton] = useState(false)
-
+    var [activedButton, setStateButton] = useState(false);
     function changeStateButtonToActive(){
-        console.log('chamou mudança estado botao')
         setStateButton(!activedButton)
     }
 
