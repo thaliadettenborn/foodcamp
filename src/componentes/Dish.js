@@ -1,53 +1,29 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { changeStyleButton } from './Footer';
 
 export default function Dish(props){
-    var {dish,src,description,price,key} = props;
-    var [selected,setSelection] = useState(false);
-    var [amount,setAmount] = useState(1);
-
-    if(amount === 0){
-        setAmount(1)
-        setSelection(false)
-    }
-    (selected) && (setTimeout(activateButton,0));
-
+    var {product,onclickPlus,onclickMinus,key} = props;
+    var {dish,src,description,price,quantity} = product;
+    
     return (
-        <li 
-            data-name={dish}
-            data-price={price}
-            data-amount={amount}
-            className={selected && "selected"}
-            onClick={() => setSelection(true)}
-        >
+        <div className={(quantity > 0) ? "container-product selected" : 'container-product'}>
+            <li onClick={() => onclickPlus(product)}>
             <img src={src} alt={dish}/>
             <h3>{dish}</h3>
             <p>{description}</p>
             <h5>R$ {price}</h5>
+            </li>
+
             <div className='count'>
-                <span className='red' onClick={() => setAmount(amount - 1)}>
+                <span className='red' onClick={() => onclickMinus(product)}>
                     <FontAwesomeIcon icon={faMinus} />
                 </span>
-                <span className='numberDish'>{amount}</span>
-                <span className='green' onClick={() => setAmount(amount + 1)}>
+                <span className='numberDish'>{quantity}</span>
+                <span className='green' onClick={() => onclickPlus(product)}>
                     <FontAwesomeIcon icon={faPlus} />
                 </span>
             </div>
-        </li>
+        </div>
     )
 }
-
-function activateButton(){
-    var orderPlates = document.querySelectorAll('.plates .selected');
-    var orderBeverages = document.querySelectorAll('.beverages .selected');
-    var orderDesserts = document.querySelectorAll('.desserts .selected');
-
-    var numberOfItemsInCategories = (orderPlates.length) && (orderBeverages.length) && (orderDesserts.length);
-    console.log(numberOfItemsInCategories)
-
-    if(numberOfItemsInCategories){
-        changeStyleButton();
-    };
-};
