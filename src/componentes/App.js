@@ -1,15 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
 
 export default function App(){
+    var [activedButton, setStateButton] = useState(false)
+
+    function changeStateButtonToActive(){
+        console.log('chamou mudança estado botao')
+        setStateButton(!activedButton)
+    }
+
     return (
         <div>
             <Header />
-            <Main />
-            <Footer />
+            <Main changeStateButton={changeStateButtonToActive}/>
+            <Footer activedButton={activedButton} reviewOrder={reviewOrder}/>
         </div>
     )
+}
+
+function reviewOrder(){
+    console.log('chamou');
 }

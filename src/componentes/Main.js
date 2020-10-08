@@ -2,16 +2,18 @@ import React, {useState} from 'react';
 import Dish from './Dish';
 import menu from './restaurantMenu';
 
-export default function Main(){
+export default function Main(props){
     var [products,setQuantity] = useState(menu);
 
     function incrementQuantity(clickedProduct){
         clickedProduct.quantity += 1;
         setQuantity({...products});
+        activateButton(products,props.changeStateButton);
     }
     function decrementQuantity(clickedProduct){
         (clickedProduct.quantity === 0) ? (clickedProduct.quantity = 1) :(clickedProduct.quantity -= 1);
         setQuantity({...products});
+        activateButton(products,props.changeStateButton);
     }
 
     return (
@@ -37,16 +39,15 @@ function SectionProducts(props){
     )
 }
 
+function activateButton(products,changeStateButtonToActive){
+    var {plates,beverages,desserts} = products;
+    var chosenDishes = plates.filter(d => d.quantity);
+    var chosenBeverages = beverages.filter(b => b.quantity);
+    var chosenDesserts= desserts.filter(d => d.quantity);
 
-// function activateButton(){
-//     var orderPlates = document.querySelectorAll('.plates .selected');
-//     var orderBeverages = document.querySelectorAll('.beverages .selected');
-//     var orderDesserts = document.querySelectorAll('.desserts .selected');
+    var setUpTheOrder = chosenDishes.length && chosenBeverages.length && chosenDesserts.length;
 
-//     var numberOfItemsInCategories = (orderPlates.length) && (orderBeverages.length) && (orderDesserts.length);
-//     console.log(numberOfItemsInCategories)
-
-//     if(numberOfItemsInCategories){
-//         changeStyleButton();
-//     };
-// };
+    if(setUpTheOrder){
+        changeStateButtonToActive()
+    }
+};

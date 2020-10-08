@@ -51,12 +51,17 @@ footer button{
     font-size: 20px;
     color: #FFFFFF;
     font-weight: 100;
-    padding: 5px 20px;
+    padding: 5px 30px;
     background: #CBCBCB;
     width: 80%;
     border-radius: 30px;
     border: none;
     transition: background 200ms ease-in-out;
+}
+button.activated{
+    background: #32B72F;
+    padding: 15px;
+    font-weight: bold;
 }
 
 /*------------------------------------------------estilo dos titulos------------------------------------------------*/
