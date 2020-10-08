@@ -142,16 +142,6 @@ function pedirNomeEndereco(){
     return [nome,endereço];
 }
 
-//------------------------------função para mudar o estilo do botão ativado
-function mudaEstiloBotao(){
-    var botaoAtivado = document.querySelector('footer button');
-    botaoAtivado.removeAttribute('disabled');
-    botaoAtivado.innerText = "Fechar pedido";
-    botaoAtivado.style.background = "#32B72F";
-    botaoAtivado.style.padding = "15px";
-    botaoAtivado.style.fontWeight = "bold";
-    botaoAtivado.setAttribute('onclick','confirmaPedido()');
-};
 
 //--------------------------------função que ativa a janela de confirmação dos pedidos
 function ativarJanelaConfirmacao(){
