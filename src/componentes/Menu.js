@@ -85,7 +85,7 @@ function calculatPartialCost(item){
     return item.map(element => {
         var {dish,price,quantity} = element;
         price = convertToNumber(price);
-        var partialCost = price * quantity;
+        var partialCost = (price * quantity).toFixed(2);
         return {quantity,dish,partialCost}
     })
 }
@@ -93,12 +93,11 @@ function calculatPartialCost(item){
 function calculateTotalCost(products){
     var total = 0;
     products.forEach(item => {
-        total += item.partialCost;
+        total += parseFloat(item.partialCost);
     })
     return total.toFixed(2);
 }
 
 function convertToNumber(string){
-    var number = parseFloat(string.replace(',','.'));
-    return number.toFixed(2)
+    return parseFloat(string.replace(',','.'));
 }
