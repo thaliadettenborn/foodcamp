@@ -5,8 +5,8 @@ export default function Footer(props){
     var {activedButton} = props;
     return (
         <footer>
-            <button className={activedButton && 'activated'}>
-                <Link to={activedButton && "/review-order"}>
+            <button className={activedButton ? 'activated' : undefined}>
+                <Link to={activedButton ? "/review-order" : undefined}>
                     <span>
                         {activedButton ? 'Revisar Pedido' : 'Selecione os 3 itens para fechar o pedido'}
                     </span>
