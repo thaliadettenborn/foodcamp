@@ -185,16 +185,18 @@ li img{
 
 /*---------------------------------------janela de confirmação do order------------------------------------------*/
 .reviewScreen{
-    width: 85vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: rgba(255, 255, 255, 0.90);
     padding: 10px;
-    margin: 0 auto;
     border-radius: 10px;
     color: #333333;
+}
+.reviewBox{
+    width: 90vw;
+    margin: 0 auto;
 }
 
 /*-----------------botão request----------------------*/
@@ -206,7 +208,7 @@ li img{
     border: none;
     color: white;
     border-radius: 30px;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
@@ -217,9 +219,11 @@ li img{
     display: inline-block;
     border: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     padding: 5px;
     text-align: center;
+    color: inherit;
+    font-weight: normal;
 }
 
 /*--------------------------------------div com itens que foram orders + total---------------------------------------*/
@@ -232,16 +236,16 @@ li img{
     justify-content: space-between;
 }
 .order span{
-    font-size: 18px;
-    font-weight: 100;
+    font-size: 20px;
+    font-weight: 300;
     font-family: 'Roboto', sans-serif;
-    margin: 10px 0px;
+    margin-bottom: 12px;
 }
 
 /*--------------------------------------estilo dos texto da div total order---------------------------------------*/
 .total span{
     font-size: 20px;
-    font-weight: bold;
+    font-weight: normal;
     text-transform: uppercase;
     margin-top: 10px;
 }

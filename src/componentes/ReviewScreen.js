@@ -1,18 +1,49 @@
-// <!----------------------------tela de confirmação do pedido--------------------------------->
-// <aside class="janelaConfirmacao">
-//     <div class="confirmacao">
-//         <h3>Confirme seu pedido:</h3>
-//         <article class="pedido"></article>
-//         <div class="btnConfirm">
-//             <button class="pedir" onclick="telaAgradecimento()"><a>Tudo certo, pode pedir!</a></button>
-//             <button class="cancelar"><a href="index.html">Cancelar</a></button>
-//         </div>
-//     </div>
-// </aside>
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {order} from './Menu'
 
-export default function ReviewScreen(params) {
+export default function ReviewScreen() {
     return (
-        <h1>teste</h1>
+        <div className='reviewBox'>
+            <h2>Revise seu pedido</h2>
+            <Aside />
+        </div>
+    )
+}
+
+function Aside(){
+    var {linkWhats,products,total} = order;
+    return (
+        <aside className="reviewScreen box-shadow">
+            <article className='order'>
+                {products.map((p,i) =>
+                    <Order quantity={p.quantity} dish={p.dish} partialCost={p.partialCost} key={i} />
+                )}
+                <Total value={total}/>
+            </article>
+            <button className="request"><a href={linkWhats}>Tudo certo, pode pedir!</a></button>
+            <button className="cancel">
+                <Link to='/'>Cancelar</Link>
+            </button>
+        </aside>
+    )
+}
+
+function Order(props){
+    var {quantity,dish,partialCost} = props;
+    return (
+        <div>
+            <span>{quantity}x {dish}</span>
+            <span>{partialCost.toString().replace('.',',')}</span>
+        </div>
+    )
+}
+
+function Total(props){
+    return(
+        <div className='total'>
+            <span>Total:</span>
+            <span>{`R$ ${props.value.toString().replace('.',',')}`}</span>
+        </div>
     )
 }
