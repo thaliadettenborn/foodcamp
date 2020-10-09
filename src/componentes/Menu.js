@@ -3,6 +3,7 @@ import Dish from './Dish';
 import menu from './restaurantMenu';
 
 var order = {};
+export {order};
 
 export default function Menu(props){
     var [products,setQuantity] = useState(menu);
