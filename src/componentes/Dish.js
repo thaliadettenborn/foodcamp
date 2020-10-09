@@ -7,7 +7,9 @@ export default function Dish(props){
     var {dish,src,description,price,quantity} = product;
     
     return (
-        <div className={(quantity > 0) ? "container-product selected" : 'container-product'}>
+        <div 
+            className={(quantity > 0) ? "container-product box-shadow selected" : 'container-product box-shadow'}
+        >
             <li onClick={() => onclickPlus(product)}>
             <img src={src} alt={dish}/>
             <h3>{dish}</h3>

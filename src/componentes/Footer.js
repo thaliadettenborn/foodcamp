@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export default function Footer(props){
     var {activedButton} = props;
     return (
-        <footer>
+        <footer className='box-shadow'>
             <button className={activedButton ? 'activated' : undefined}>
                 <Link to={activedButton ? "/review-order" : undefined}>
                     <span>
