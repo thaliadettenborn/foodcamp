@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Dish from './Dish';
 import menu from './restaurantMenu';
 
+var order = {};
+
 export default function Menu(props){
     var [products,setQuantity] = useState(menu);
 
@@ -45,9 +47,56 @@ function activateButton(products,changeStateButtonToActive){
     var chosenBeverages = beverages.filter(b => b.quantity);
     var chosenDesserts= desserts.filter(d => d.quantity);
 
-    var setUpTheOrder = chosenDishes.length && chosenBeverages.length && chosenDesserts.length;
+    var setUpTheOrder = (chosenDishes.length > 0) && (chosenBeverages.length > 0) && (chosenDesserts.length > 0);
 
     if(setUpTheOrder){
         changeStateButtonToActive()
+        assembleOrder(chosenDishes,chosenBeverages,chosenDesserts)
     }
-};
+}
+
+function assembleOrder(dishes,beverages,desserts){
+    dishes = calculatPartialCost(dishes);
+    beverages = calculatPartialCost(beverages);
+    desserts = calculatPartialCost(desserts);
+    var totalCost = calculateTotalCost([...dishes,...beverages,...desserts]);
+
+    order.products = [...dishes,...beverages,...desserts];
+    messageToRestaurant(dishes,beverages,desserts,totalCost);
+}
+
+function messageToRestaurant(dishes,beverages,desserts,totalCost){
+    var dishesOrdered = dishes.map(element => `${element.quantity}x ${element.dish}`);
+    var beveragesOrdered = beverages.map(element => `${element.quantity}x ${element.dish}`);
+    var dessertsOrdered = desserts.map(element => `${element.quantity}x ${element.dish}`);
+
+    var message = `
+        Olá, gostaria de fazer o pedido:\n
+        - Prato: ${dishesOrdered}\n
+        - Bebida: ${beveragesOrdered}\n
+        - Sobremesa: ${dessertsOrdered}\n\n
+        Total: R$ ${totalCost}
+    `;
+    order.linkWhats = `https://api.whatsapp.com/send?phone=5551986442061&text=${encodeURIComponent(message)}`
+}
+
+function calculatPartialCost(item){
+    return item.map(element => {
+        var {dish,price,quantity} = element;
+        price = convertToNumber(price);
+        var partialCost = price * quantity;
+        return {quantity,dish,partialCost}
+    })
+}
+
+function calculateTotalCost(products){
+    var total = 0;
+    products.forEach(item => {
+        total += item.partialCost;
+    })
+    return total;
+}
+
+function convertToNumber(string){
+    return parseFloat(string.replace(',','.'))
+}
