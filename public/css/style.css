@@ -120,13 +120,13 @@ p{
 .plates ul, .beverages ul, .desserts ul{
     display: flex;
     align-items: center;
-    overflow: scroll;
+    overflow-x: scroll;
     border-radius: 7px;
     box-shadow: none;
     padding: 7px;
     margin: 10px 0px;
 }
--webkit-scrollbar {
+ul::-webkit-scrollbar {
     width: 0px;
 }
 .container-product{
