@@ -7,7 +7,7 @@ import Footer from './Footer';
 export default function Main(){
     var [activedButton, setStateButton] = useState(false);
     function changeStateButtonToActive(){
-        setStateButton(!activedButton)
+        setStateButton(true)
     }
 
     return (

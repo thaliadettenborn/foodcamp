@@ -48,7 +48,7 @@ function activateButton(products,changeStateButtonToActive){
     var chosenDesserts= desserts.filter(d => d.quantity);
 
     var setUpTheOrder = (chosenDishes.length > 0) && (chosenBeverages.length > 0) && (chosenDesserts.length > 0);
-
+    console.log(setUpTheOrder)
     if(setUpTheOrder){
         changeStateButtonToActive()
         assembleOrder(chosenDishes,chosenBeverages,chosenDesserts)
