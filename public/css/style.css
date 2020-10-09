@@ -196,9 +196,8 @@ li img{
 }
 .reviewBox{
     width: 90vw;
-    margin: 0 auto;
+    margin: 120px auto 0 auto;
 }
-
 /*-----------------botão request----------------------*/
 .request{
     background-color: #4fd074;

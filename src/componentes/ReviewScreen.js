@@ -1,12 +1,16 @@
 import React from 'react';
+import Header from './Header'
 import {Link} from 'react-router-dom';
 import {order} from './Menu'
 
 export default function ReviewScreen() {
     return (
-        <div className='reviewBox'>
-            <h2>Revise seu pedido</h2>
-            <Aside />
+        <div>
+            <Header />
+            <div className='reviewBox'>
+                <h2>Revise seu pedido</h2>
+                <Aside />
+            </div>
         </div>
     )
 }
