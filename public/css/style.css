@@ -1,0 +1,259 @@
+body{
+    background: #EEEEEE;
+    margin: 80px 0px 100px 0px;
+}
+main{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.box-shadow{
+    -webkit-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.5);
+}
+
+/*--------------------header styles---------------------------*/
+header{
+    background: #CF2B2B;
+    font-family: 'Righteous', cursive;
+    color: #FFFFFF;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 11;
+}
+
+/*--------------------- footer styles--------------------*/
+footer{
+    background: #FFFFFF;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+footer button{
+    background: #CBCBCB;
+    width: 80%;
+    border-radius: 30px;
+    border: none;
+    transition: background 200ms ease-in-out;
+}
+button span{
+    display: inline-block;
+    padding: 5px 30px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+button.activated span{
+    padding: 15px;
+    font-weight: bold;
+}
+button.activated{
+    background: #32B72F;
+}
+
+/*----------------- title styles----------------------*/
+h1{
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+h2{
+    font-size: 25px;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 15px;
+}
+h3{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+h3::first-letter{
+    text-transform: capitalize;
+}
+.reviewSreen h3{
+    font-size: 25px;
+}
+h4{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+h5{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0px;
+    text-transform: capitalize;
+}
+p{
+    font-size: 14px;
+    font-weight: thin;
+    margin: 10px 0px;
+}
+
+/*---------------------section styles------------------------*/
+.plates, .beverages, .desserts{
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    height: 280px;
+    margin: 20px 0px;
+}
+.plates ul, .beverages ul, .desserts ul{
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    border-radius: 7px;
+    box-shadow: none;
+    padding: 7px;
+    margin: 10px 0px;
+}
+ul::-webkit-scrollbar {
+    width: 0px;
+}
+.container-product{
+    position: relative;
+    width: 170px;
+    height: 260px;
+    margin: 0px 15px 0px 0px;
+    border-radius: 7px;
+    flex-shrink: 0;
+    background: #FFFFFF;
+}
+.plates li, .beverages li, .desserts li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 10px;
+}
+li img{
+    height: 90px;
+    border-radius: 15px;
+}
+.beverages img{
+    width: 90px;
+    height: 90px;
+}
+.count{
+    display: none;
+}
+.green{
+    color: #7bd375;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.red{
+    color: #b85a64;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/*----------------selection products ------------------*/
+.selected{
+    border: 5px solid #32B72F;
+    position: relative;
+}
+.selected .count{
+    display: initial;
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: transparent;
+}
+
+/*----------------review sreen order-------------------*/
+.reviewScreen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.90);
+    padding: 10px;
+    border-radius: 10px;
+    color: #333333;
+}
+.reviewBox{
+    width: 90vw;
+    margin: 120px auto 0 auto;
+}
+/*-----------------button request----------------------*/
+.request{
+    background-color: #4fd074;
+    display: inline-block;
+    padding: 10px;
+    width: 90%;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/*-----------------button cancel----------------------*/
+.cancel{
+    background: transparent;
+    display: inline-block;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    color: inherit;
+    font-weight: normal;
+}
+
+/*--------------style span products--------------------*/
+.order{
+    width: 100%;
+}
+.order div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.order span{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 12px;
+}
+
+/*----------------style span total----------------------*/
+.total span{
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
