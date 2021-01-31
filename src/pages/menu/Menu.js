@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Dish from './Dish';
-import menu from './restaurantMenu';
+import Dish from './components/Dish';
+import menu from '../../data/restaurantMenu';
 
 var order = {};
 export {order};

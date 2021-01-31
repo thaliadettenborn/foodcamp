@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {order} from './Menu';
-import Order from './Order';
-import Total from './Total';
+import {order} from '../menu/Menu';
+import Order from './components/Order';
+import Total from './components/Total';
 
 export default function Aside(){
     var {linkWhats,products,total} = order;
