@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Main from './components/Main';
-import ReviewScreen from './components/ReviewScreen';
+import Main from './Main';
+import ReviewScreen from './ReviewScreen';
 import {
     BrowserRouter as Router,
     Switch,

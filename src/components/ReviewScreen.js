@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../../components/Header';
-import Aside from '../Aside';
+import Header from './Header';
+import Aside from './Aside';
 
 export default function ReviewScreen() {
     return (
