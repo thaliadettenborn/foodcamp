@@ -1,3 +1,4 @@
+/*------------------------------------------------gerais------------------------------------------------*/
 body{
     background: #EEEEEE;
     margin: 80px 0px 100px 0px;
@@ -14,7 +15,7 @@ main{
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.5);
 }
 
-/*--------------------header styles---------------------------*/
+/*------------------------------------------------estilo do topo------------------------------------------------*/
 header{
     background: #CF2B2B;
     font-family: 'Righteous', cursive;
@@ -31,7 +32,7 @@ header{
     z-index: 11;
 }
 
-/*--------------------- footer styles--------------------*/
+/*------------------------------------------------estilo do footer------------------------------------------------*/
 footer{
     background: #FFFFFF;
     width: 100%;
@@ -70,7 +71,7 @@ button.activated{
     background: #32B72F;
 }
 
-/*----------------- title styles----------------------*/
+/*------------------------------------------------estilo dos titulos------------------------------------------------*/
 h1{
     font-size: 35px;
     margin-bottom: 5px;
@@ -109,7 +110,7 @@ p{
     margin: 10px 0px;
 }
 
-/*---------------------section styles------------------------*/
+/*------------------------------------------------estilo das section------------------------------------------------*/
 .plates, .beverages, .desserts{
     font-family: 'Roboto', sans-serif;
     color: #333333;
@@ -172,7 +173,7 @@ li img{
     cursor: pointer;
 }
 
-/*----------------selection products ------------------*/
+/*------------------------------------------platess do combo selecteds-------------------------------------------*/
 .selected{
     border: 5px solid #32B72F;
     position: relative;
@@ -192,7 +193,7 @@ li img{
     background-color: transparent;
 }
 
-/*----------------review sreen order-------------------*/
+/*---------------------------------------janela de confirmação do order------------------------------------------*/
 .reviewScreen{
     display: flex;
     flex-direction: column;
@@ -207,7 +208,7 @@ li img{
     width: 90vw;
     margin: 120px auto 0 auto;
 }
-/*-----------------button request----------------------*/
+/*-----------------botão request----------------------*/
 .request{
     background-color: #4fd074;
     display: inline-block;
@@ -221,7 +222,7 @@ li img{
     font-weight: bold;
 }
 
-/*-----------------button cancel----------------------*/
+/*-----------------botão cancel----------------------*/
 .cancel{
     background: transparent;
     display: inline-block;
@@ -234,7 +235,7 @@ li img{
     font-weight: normal;
 }
 
-/*--------------style span products--------------------*/
+/*--------------------------------------div com itens que foram orders + total---------------------------------------*/
 .order{
     width: 100%;
 }
@@ -250,7 +251,7 @@ li img{
     margin-bottom: 12px;
 }
 
-/*----------------style span total----------------------*/
+/*--------------------------------------estilo dos texto da div total order---------------------------------------*/
 .total span{
     font-size: 20px;
     font-weight: normal;
